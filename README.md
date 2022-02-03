@@ -390,11 +390,68 @@ The next step is to add each of the cosigners, which are referred to as the wall
 <img src="images/sparrow_select_airgapped_device.png" width="750">
 </p>
 
-Now return to your SeedSigner, and select the…
+**Important Step:** Return to your SeedSigner, and ensure that "Network" is set to "Testnet" within the SeedSigner settings.
 
-Select the SeedSigner “Scan” button, which will bring up a 
+<p align="left">
+<img src="images/testnet.png" width="187">
+</p>
 
+Now follow this menu sequence, which assumes you have temporarily saved the seed(s) you want to use in SeedSigner:
 
+Seed Tools --> xPub from Seed --> Saved Seed? = Y --> Use Seed Slot ## --> (seedword review) -->
+
+<p align="left">
+<img src="images/xpub1.png" width="750">
+</p>
+
+(seedword review) --> Wallet Type = Multisig --> Derivation Path = Native Segwit -->
+
+<p align="left">
+<img src="images/xpub2.png" width="750">
+</p>
+
+Which Wallet = Sparrow --> (Xpub Info review)
+
+<p align="left">
+<img src="images/xpub3.png" width="563">
+</p>
+
+After the Xpub Info Review screen, one or more QR codes will be displayed on the screen that represent your seed's extended public key.
+
+Now return to Sparrow and select the SeedSigner “Scan” button, which should activate your system's web-camera. Now scan the QR code(s) displayed on your SeedSigner into your computer:
+
+<p align="left">
+<img src="images/xpub_scan.png" width="750">
+</p>
+
+**Important Note:** If the screen from your SeedSigner is causing a glare in the webcam preview window, you can press up or down on the SeedSigner thumbstuck to adjust the brighness of the displayed QR code; ambient lighting can also have an impact on your webcam's ability to focus. It should be noted that some low-budget laptops may not have a sufficiently high-resolution camera to scan SeedSigner's QR codes. Adjusting the "QR Density" setting to "Low" may also resolve webcam scanning difficulties. With some low-quality cameras, advanced techniques can be used to tweak settings and make the camera workable (This is a good resource: https://www.addictivetips.com/windows-tips/access-advanced-settings-for-the-integrated-webcam-on-windows-10/amp/). 
+
+After the QR code(s) representing the extended public key have been scanned into Sparrow, the keystore tab will be renamed "SeedSigner" and information about the public key will be displayed in the Sparrow interface:
+
+<p align="left">
+<img src="images/key_1_entered.png" width="750">
+</p>
+
+Because this setup is using SeedSigner with three different keys, you can modify the keystore's "Label" to read "SeedSigner 1". After repeating the above process for the second and third keys in your quorum, your wallet configuration window should look similarly to:
+
+<p align="left">
+<img src="images/all_keys_entered.png" width="750">
+</p>
+
+You may now click the "Apply" button in the lower right portion of the window to finalize the settings; Sparrow will display a final prompt asking if you would like to add a password to your wallet:
+
+<p align="left">
+<img src="images/password_prompt.png" width="450">
+</p>
+
+For the purposes of this guide, we will leave these password fields blank and click "No Password".
+
+Not much will appear to change within the Sparrow interface, but your new wallet has been created! The very first thing you want to do with your wallet is to create a static backup of the full wallet descriptor. As previously noted, this descriptor contains a copy of each extended public key, as well as very specific configuration on how the keys are being combined to create the multi-signature wallet. The reasons for preserving this information are two-fold:
+
+* If you ever lose one of your three seeds / private keys, having a copy of the full wallet descriptor is essential to not lose access to your funds. If you lose one of your cosigner private keys and do not have full wallet descriptor, **your funds will be permanently lost**
+* If you subsequently want to verify that receive or change addresses belong to your multi-signature wallet as it was originally configured, a historical record of the wallet's configuration information is your **best** resource. As a stateless device, SeedSigner will not retain your wallet configuration information, and should your coordinator software (that's Sparrow in this guide) become somehow compromised, an attacker might try to provide a falsified wallet descriptor as part of an attempt to thwart address verification and steal funds
+
+It should be noted that your full wallet descriptor is designated as private **but not** secret information.
 
 
 
