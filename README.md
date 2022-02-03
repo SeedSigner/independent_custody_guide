@@ -1,18 +1,29 @@
-# The SeedSigner Independent Custody Guide
+<p align="center">
+<img src="images/seedsigner_logo.png" width="450">
+</p>
 
-(**Some Notes on Titling:** I almost chose "The SeedSigner Manifesto" as a grab-your-attention title with a little bit of cheekiness baked in. As I think more and more about Bitcoin custody and how it has evolved over time, the term "manifesto" seems increasingly appropriate to use for some of the ideas that underlie this guide. Manifestos commonly challenge conventional ways of thinking about things and can be threatening to status quo beliefs.
+<h1 align="center">SeedSigner Independent Custody Guide</h1>
 
+<p align="justify">
+(<b>Some Notes on Titling:</b> I almost chose "The SeedSigner Manifesto" as a grab-your-attention title with a little bit of cheekiness baked in. As I think more and more about Bitcoin custody and how it has evolved over time, the term "manifesto" seems increasingly appropriate to use for some of the ideas that underlie this guide. Manifestos commonly challenge conventional ways of thinking about things and can be threatening to status quo beliefs.
+
+<p align="justify">
 As I view the longer arc of Bitcoin custody, I think of it in three epochs. The first is the epoch characterized by Bitcoin Core and paper wallets, Core being of course the earliest way to store bitcoin, and paper wallets being representative of early attempts at facilitating that storage with improved security assurances.
 
+<p align="justify">
 I consider the second epoch to be the hardware wallet era; that is, the era of proprietary, USB-connected, secure element equipped, separate hardware devices that represented a big advance in bitcoin custodial security assurances, but with some significant compromises, some of which involve varying degrees of reliance on third parties. The second epoch was facilitated by the hierarchical deterministic wallet and the BIP39 seed phrase standards.
 
+<p align="justify">
 In my view, the third custody epoch is being ushered in by the PSBT (partially signed bitcoin transaction) standard, the implementation and refinement of multi-signature wallet standards, and the ongoing re-thinking of how we can increase the separation between devices/software that interact with the Bitcoin protocol, and devices/software that interact with private keys. In my view, stateless signing devices like SeedSigner that leverage transparently airgapped communication (read QR-exchange protocol rather than NFT), with a focus on facilitating user-accessible multi-signature wallet use, will emerge as emblematic of this third epoch of Bitcoin custody. The Do-It-Yourself (DIY) aspect of SeedSigner, leveraging general purpose hardware and FOSS code, will also serve to shift control away from purpose-built, proprietary hardware, moving that power back into the hands of users.
 
+<p align="justify">
 This "manifesto", then seeks to advance the idea that with the right mix of design inputs, users can have acces to simple, user-friendly bitcoin self-custody, with reasonably solid security assurances, using inexpensive, discreetly-acquired hardware, & FOSS code.)
-  
+
+<br/><br/>
 <p align="center">
 <img src="images/era_3.png" width="600">
 </p>
+<br/><br/>
   
 ## Introduction
 
@@ -57,6 +68,10 @@ Sparrow is a software program that runs on each of the Big-3 computer OS platfor
 
 It should be ntoed that the multi-signature custody setup this guide intends to help users create can also absolutely be created and operated with both Specter desktop or BlueWallet, but again with the goal of minimizing the number of branches on the decision tree, I have elected to focus on Sparrow.
 
+<p align="center">
+<img src="images/keys.jpg" width="300">
+</p>
+
 ## And Why Multi-signature Wallets?
 
 Multi-signature wallets have gotten a bad reputation. Several years ago when the concept started to gain traction in the Bitcoin ecosystem, the hype and value proposition was real but it it took a fair amount of time for proper tools to be developed. Like most tools, the earliest versions necessarily targeted a more-technical audience, and by the time those tools emerged the larger hype around multi-signature wallets had died down, resulting in them being perceived as a more niche self-custody option.
@@ -90,17 +105,31 @@ As I was trying to improve my Bitcoin storage security posture, I found myself i
 
 Enter Specter-DIY, as referenced above. While I'd been researching Specter desktop and other emerging multi-signature storage tools, I came across the Specter-DIY, a DIY (do-it-yourself) Bitcoin wallet made from easily acquireable electronic components. One of the most interesting aspects of the Specter-DIY for me was it's use of animated QR code sets to communicate proposed transaction information from the multi-signature wallet coordinator software (in this case Specter Desktop) to the Specter-DIY, where the wallet's private key was available. An updated proposed transaction was then passed back to the multi-signature coordinator software from the Specter-DIY (more on this mechanism, which in technical jargon is referred to as a "partially signed Bitcoin transaction", to come), again using QR codes.
 
+<p align="center">
+<img src="images/specter_diy.png" width="450">
+</p>
+
 This procedure made so much sense to me given my background in digital forensics (with a little bit of information security training sprinkled in). How the private key (which is the absolute safeguard of any Bitcoin storage scheme) could be stored and used on a device separate from the multi-signature coordinator, with only a very narrow QR-exchange communication protocol used to facilitate communication between them (instead of a USB connection), was such an elegant and relatively simple solution. In the digital forensics realm, great care and attention is given to when and how evidentiary devices are permitted to connect to evidence-collection devices; this great care arises from the broader criminal forensic discipline's reliance on Locard's "exchange principle". The exchange principle dictates that when there is physical contact between two given items, there will be an exchange of microscopic material between them. Loosely applied to the discipline of digital forensics, when you connect two electronic devices, "things can happen" that can involve either the transfer of data, or even the creation of new data as a result of the connection. Digital forensic practitioners seek to avoid such, or at least be able to document and explain it, wherever possible.
 
 My interest in Specter-DIY led me to begin casually interacting with members of the Specter team, as well as security researcher Michael Flaxman, author of the excellent "10x Bitcoin Security Guide" (https://btcguide.github.io/). Having previously tinkered with 3D printing and computer-aided design, I created designs for 3D-printable enclosures the DIY. While interacting with Flaxman, he shared an idea for a simple device that integrated a Raspberry Pi Zero single board computer with a display-plus-controls module that would allow users to input seed words they had randomly selected from the BIP39 list and use the device to calculate a seed phrase's final word, that acts as a kind of checksum against the words that precede it. (This mechanism is intended to alert users to errors they might make when entering a seed phrase into a given device.) The beauty part of Flaxman's idea was that the proposed device used a specific version of the Raspberry Pi Zero, the version 1.3 that did not include the physical hardware necessary for th Pi to connect to other devices via WiFi or Bluetooth).
 
 When conducting a digital forensic exam on a mobile electronic device, the practice of radio isolation (using "Faraday" cages a la Michael Faraday) is often implemented to prevent devices subject to examination from connecting to wireless networks (via WiFi or cellular connection) or other device's (via Bluetooth). This isolation prevents incoming data from causing changes on the device (the worst of which being a "death from above" remote wipe signal) and allows for a more controlled examination/acquisition of a mobile electronic device, with a more static data set. I should also note that for security reasons, the digital forensic lab in which I work utilized an internal, offline network that was not architected to connect to the internet. Forensic evidentiary data could be shared by machines in different parts of the lab, but data travel beyond the lab's internal network was not possible. There were several reasons for this segregation, but it basically boiled down to not wanting any of our private data to be able to get out, nor wanting any undesirable data from the open internet to be able to get in.
 
-Flaxman's idea of using a computer with no means of wireless communication to calculate final seed words enforced the same kind of network isolation we had used in the forensic lab and ensured that the private data comprised by the seed phrase would remain private, in a kind of "can't be evil" way. I ordered the necessary components and set to work translating my rudimentary coding skills into a proof-of-concept. Without too much trouble I cobbled together a device that would allow a user to enter 23 BIP39 seed words, and use a Python Bitcoin library called Embit (h/t to Stepan Snigerev of Specter) to generate an appropriate checksum word for a proper seed. After coding a rudimentary dice-to-seed module that would convert 99 dice rolls into a 24-word seed phrase, I started to look for more use cases for my new "toy". I realized that with the addition of an inexpensive, Raspberry Pi-compatible camera, I might be able to replicate the core air-gapped transaction signing ability of the Specter-DIY.
+Flaxman's idea of using a computer with no means of wireless communication to calculate final seed words enforced the same kind of network isolation we had used in the forensic lab and ensured that the private data comprised by the seed phrase would remain private, in a kind of "can't be evil" way. I ordered the necessary components and set to work translating my rudimentary coding skills into a proof-of-concept. Without too much trouble I cobbled together a device that would allow a user to enter 23 BIP39 seed words, and use a Python Bitcoin library called Embit (h/t to Stepan Snigerev of Specter) to generate an appropriate checksum word for a proper seed.
+
+<p align="center">
+<img src="images/early_seedsigner.png" width="450">
+</p>
+
+After coding a rudimentary dice-to-seed module that would convert 99 dice rolls into a 24-word seed phrase, I started to look for more use cases for my new "toy". I realized that with the addition of an inexpensive, Raspberry Pi-compatible camera, I might be able to replicate the core air-gapped transaction signing ability of the Specter-DIY.
 
 With some more stackoverflow-intensive research and coding, I was able to replicate the DIY's QR-exchange transaction-signing process, and at this point the full concept of SeedSigner had been born. An issue still remained however relative to private keys: would you really want this little device to remember your private keys? Given the absence of any kind of secure enclave technology in the Raspberry Pi platform that would be able to provide users with some assurance their private key was being stored securely, the resounding answer was a "no", you would not want this device storing your private keys.
 
 The solution to this problem was once again found in my experiences in the forensic lab. To acquire data from hard drives in a forensically defensible manner, examiners will commonly use linux-based "live" operating systems. These forensic live-OS tools allow you to power on an evidentiary computer, connect an evidentiary-collection hard drive, and essentially use a “bad guy’s” computer to acquire the data from its internal storage location(s). The defining characteristic of these forensic live operating systems is that they operate entirely in the target computer's memory (and then conduct a read-only acquisition of attached storage media) such that after you power the target system off, no persistent, residual data from the acquisition is left behind (this is because data in computer memory is “volatile”, meaning it dissipates when power is removed from the hardware). If my little handheld signing device was simply not engineered to "remember" private keys (only utilizing the keys as a python variable in memory), the issue of securely storing a key on the signing device could be avoided altogether. And not storing keys meant that the device could in theory be safely used with multiple keys, obviating the need for a dedicated hardware device for each private key within a multi-signature wallet!
+
+<p align="center">
+<img src="images/seedsigner_components.jpeg" width="450">
+</p>
 
 The bill-of-materials cost for my physically-disconnected, wireless-incapable, amnesiac device came to approximately $35, a satifying result for my inner cheapskate. But as I shared my idea for a signing device with others Bitcoiners, privacy-related advantages associated with the tool also emerged. Because a SeedSigner is not built from any components that are recognizably identified as bitcoin-specific by most people, they can be acquired without signaling to a merchant or anyone else an intention to build a Bitcoin signing device, or otherwise an intention to interact with the Bitcoin network. For those with strong privacy concerns, this is a desirable feature, and for those living in part of the world where Bitcoin use is discouraged or outright banned (thus making it difficult or impossible to securely and reliably source hardware wallets) SeedSigner can provide a more secure way to secretly save with Bitcoin.
 
@@ -111,6 +140,10 @@ Reading the story behind how SeedSigner came into existence highlights many of t
 - Statelessness makes using SeedSigner with multiple seeds and/or multiple wallets feasible
 - Underlying fully-FOSS softare architecture makes independent build-yourself-from-source possible
 - Use of non-Bitcoin-specific hardware can enhance user privacy
+
+<p align="center">
+<img src="images/flagship.png" width="450">
+</p>
 
 ## Alright, But There's Got to Be a Catch, Right?
 
@@ -451,7 +484,43 @@ Not much will appear to change within the Sparrow interface, but your new wallet
 * If you ever lose one of your three seeds / private keys, having a copy of the full wallet descriptor is essential to not lose access to your funds. If you lose one of your cosigner private keys and do not have full wallet descriptor, **your funds will be permanently lost**
 * If you subsequently want to verify that receive or change addresses belong to your multi-signature wallet as it was originally configured, a historical record of the wallet's configuration information is your **best** resource. As a stateless device, SeedSigner will not retain your wallet configuration information, and should your coordinator software (that's Sparrow in this guide) become somehow compromised, an attacker might try to provide a falsified wallet descriptor as part of an attempt to thwart address verification and steal funds
 
-It should be noted that your full wallet descriptor is designated as private **but not** secret information.
+It should be noted that your full wallet descriptor is designated as private **but not secret** information. This means that the information within the wallet descriptor, if acquired by a third party, could be used to monitor any and all of the transactions made with your wallet. **But** the wallet descriptor **does not** contain the information necessary to access any of your funds. This knowledge may impact how and where you choose to store your wallet descriptor; printed hard copies are of course fully acceptable, but you may also choose to store a copy of your wallet descriptor on your computer, over even in "the cloud" (aka, someone else's computer).
+
+SeedSigner is currently compatible with Specter's wallet descriptor format. To export a wallet descriptor using that format in Sparrow, with your wallet loaded, navigate to File --> Export:
+
+<p align="left">
+<img src="images/file_export.png" width="300">
+</p>
+
+A dialogue box will appear with various wallet descriptor export formats visible, scroll down to the bottom where you will see an entry for "Specter Desktop":
+
+<p align="left">
+<img src="images/specter_export.png" width="500">
+</p>
+
+The "Show" option will display a QR code that contains the full wallet descriptor; you can screen-capture this QR code and print or save it as a file for future use:
+
+<p align="left">
+<img src="images/wallet_descriptor.png" width="500">
+</p>
+
+This QR formatting of the wallet descriptor will be useful when you want to verify a receive or change address using SeedSigner. You can also choose the "Export File" option, and you will have the opportunity to save a .json-formatted file that can also be used to recreate your multi-signature wallet should recovery ever be necessary.
+
+Now that you have created a multi-signature wallet and saved the wallet's descriptor, you're ready to receive some coins! To do so, you just need to visit the "Receive" section of the Sparrow wallet, along the left-hand side of the main window:
+
+<p align="left">
+<img src="images/receive.png" width="750">
+</p>
+
+From this section of the Sparrow interface you can access receive addresses as you require them without any need for any of your seed phrases. In this way, Sparrow can be used to accumulate Bitcoin over the long term without needing to have immediate access to any of your private keys.
+
+When you are ready to make a spend, visit the "Send" section of the Sparrow interface. Here you can enter the destination address, a label for the transaction, and of course the amount for the spend:
+
+<p align="left">
+<img src="images/send.png" width="750">
+</p>
+
+
 
 
 
