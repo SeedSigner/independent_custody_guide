@@ -5,7 +5,7 @@
 <h1 align="center">SeedSigner Independent Custody Guide</h1>
 
 <p align="justify">
-(<b>Some Notes on Titling:</b> I almost chose "The SeedSigner Manifesto" as a grab-your-attention title with a little bit of cheekiness baked in. As I think more and more about Bitcoin custody and how it has evolved over time, the term "manifesto" seems increasingly appropriate to use for some of the ideas that underlie this guide. Manifestos commonly challenge conventional ways of thinking about things and can be threatening to status quo beliefs.
+(<b>Some Notes on Titling:</b> I almost chose "The SeedSigner Manifesto" as a grab-your-attention title with a little bit of cheekiness baked in. As I think more and more about Bitcoin custody and how it has evolved over time, the term "manifesto" seems increasingly appropriate to use for some of the ideas that underlie this guide. Manifestos commonly challenge conventional ways of thinking and can be threatening to status quo beliefs.
 
 <p align="justify">
 As I view the longer arc of Bitcoin custody, I think of it in three epochs. The first is the epoch characterized by Bitcoin Core and paper wallets, Core being of course the earliest way to store bitcoin, and paper wallets being representative of early attempts at facilitating that storage with improved security assurances.
@@ -44,6 +44,7 @@ I should also note that early on in this guide, it may read more like an essay a
 But back to nuts and bolts; at this point it's useful to list some assumptions this guide makes about the intended audience:
 
 ### This Guide's Assumptions About Users:
+- You have a basic understanding of the mechanics of a basic bitcoin transaction
 - You are seeking to secure what is, or you expect to become, a significant amount of value
 - You are willing to spend a reasonable amount of time & energy to create a self-custody system
 - You are willing to spend at least ~$100 on the necessary hardware & supplies
@@ -520,12 +521,69 @@ When you are ready to make a spend, visit the "Send" section of the Sparrow inte
 <img src="images/send.png" width="750">
 </p>
 
+The next step is to click "Create Transaction" in the lower-right portion of the window, which then gives you an overview of the transaction as it has been constructed:
 
+<p align="left">
+<img src="images/txn.png" width="750">
+</p>
 
+From this screen you can also inspect the transaction's inputs and outputs. If you're satisfied with the details, now click the large button at the bottom of the window that reads: "Finalize Transaction for Signing". Pressing this buttons makes the different signing options visible:
 
+<p align="left">
+<img src="images/txn2.png" width="750">
+</p>
 
+From these options, first select "Show QR", which will bring up a window displaying an animated QR code:
 
+<p align="left">
+<img src="images/txn_gif.gif" width="500">
+</p>
 
+These animated QR codes contain the already discussed "rough draft" of a transaction, also referred to as a "PSBT". Now, with the animated QR code displayed, return to your SeedSigner and select "Scan QR" from the main menu. Aim your SeedSigner's camera at the animated QR code, using the live-display as a guide, and scan the transaction into the signer:
+
+<p align="left">
+<img src="images/txn_scan.gif" width="500">
+</p>
+
+Once the transaction is fully scanned in, you should see a message on the SeedSigner display that reads "PSBT Valid!". You will then navigate through the steps:
+
+Use Saved Seed? (Yes) --> (Select Seed Slot #) --> Add Seed Passphrase? (No)
+
+<p align="left">
+<img src="images/ss_txn_scan_in.png" width="750">
+</p>
+
+After completing these steps, SeedSigner will parse the PSBT and display the associated details:
+
+<p align="left">
+<img src="images/ss_txn_details.png" width="188">
+</p>
+
+Please note that some of the specific details displayed, such as the change amount and network fee amount, will likely be different. If the details don't look right, to abort the signing process just click the thumbstick to the left. If all of the details look correct and you would like to authorize the spend, click the thumbstick to the right. SeedSigner will add the necessary signature(s) to the PSBT, encode a revised version of it back into animated QR frames, and display an animated QR code containing the added signatures on SeedSigner's screen.
+
+<p align="left">
+<img src="images/signed_psbt_qrs.gif" width="400">
+</p>
+
+To get those signatures authorizing the transaction back into Sparrow, close the window displaying the animated QR code if you've not done so already, and select "Scan QR" from the Sparrow interface. Selecting this option will activate you webcam and allow you to scan the QR codes displayed on your SeedSigner into your computer:
+
+<p align="left">
+<img src="images/ss_psbt_back_in.gif" width="500">
+</p>
+
+Once the SeedSigner QR set is fully scanned back into Sparrow, you will notice in the "Signatures" section that "SeedSigner 1" has now been shaded blue, indicating this member of your quorum has supplied the necessary signatures to authorize the spend:
+
+<p align="left">
+<img src="images/sparrow_sig_1.png" width="750">
+</p>
+
+Repeat the preceding steps with your SeedSigner to sign with either "SeedSigner 2" or "SeedSigner 3" and the other "Signatures" section should become shaded in as well:
+
+<p align="left">
+<img src="images/sparrow_sig_2.png" width="750">
+</p>
+
+(**Add a note on QR density setting:**)
 
 The variables you should be thinking about as you plan your storage setup
 - electrum or node?
