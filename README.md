@@ -35,7 +35,7 @@ Most bitcoiners understand the importance of self-custody to the larger bitcoin 
 - Protects bitcoin as a financial asset from rehypothication & other forms of value dilution
 - Helps bitcoin users understand the network's technical fundamentals (when done properly)
 
-Understandably, the first reason above, that is securing one's assets, is the primary concern of most people wanting to hold their own keys --  where your money goes, your mind follows. But for many of those earnestly wanting to get to the self-custody finish line, things can get in the way, life happens. A lot of it can have to do with uncertainty and analysis-paralysis. What hardware do I need? Which software is the best? Where should I store backups? What security trade-offs make sense for me?
+Understandably, the first reason above, that is securing one's assets, is the primary concern for most people wanting to hold their own keys --  where your money goes, your mind follows. But for many of those earnestly wanting to get to the self-custody finish line, things can get in the way, life happens. A lot of it can have to do with uncertainty and analysis-paralysis. What hardware do I need? Which software is the best? Where should I store backups? What security trade-offs make sense for me?
 
 I am assembling this guide as a living document to (hopefully) help people get to that self-custody finish line, using the custody framework that has evolved over time to make the most sense to me. When engineering a self-custody system, there are numerous variables to consider -- I've tried to minimize the decision tree's branches in this guide to make the process less overwhelming for people who might be prone to obsessing over the details. I'll also attempt to justify these choices wherever I can. Depending on your situation, it may be appropriate to work through this guide with some kind of "Uncle Jim" or self-custody "coach", who can provide further context and answer questions along the way. However with a few select supplemental materials, this document may also serve as a guide for those intent on pursuing a more self-guided custody journey.
 
@@ -54,7 +54,7 @@ But back to nuts and bolts; at this point it's useful to list some assumptions t
 It also makes sense to list what you'll need early on so you can have an idea of what you're getting into:
 
 ### Necessary Items:
-- A computer running Sparrow bitcoin Wallet (https://sparrowwallet.com)
+- A webcam-equipped computer running Sparrow bitcoin Wallet (https://sparrowwallet.com)
 - An assembled SeedSigner bitcoin signing device (https://seedsigner.com)
 - A printer with paper
 - Some sort of metal backup solution (optional, but strongly recommended)
