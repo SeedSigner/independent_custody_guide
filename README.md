@@ -17,7 +17,7 @@ I consider the second epoch to be the hardware wallet era; that is, the era of p
 In my view, the third custody epoch is being ushered in by the PSBT (partially signed bitcoin transaction) standard, the implementation and refinement of multi-signature wallet standards, and the ongoing re-thinking of how we can increase the separation between devices/software that interact with the bitcoin protocol, and devices/software that interact with private keys. In my view, stateless signing devices like SeedSigner that leverage transparently airgapped communication (read QR-exchange protocol rather than NFT), with a focus on facilitating user-accessible multi-signature wallet use, will emerge as emblematic of this third epoch of bitcoin custody. The Do-It-Yourself (DIY) aspect of SeedSigner, leveraging general purpose hardware and FOSS code, will also serve to shift control away from purveyors of purpose-built, proprietary hardware wallets, moving that power back into the hands of users.
 
 <p align="justify">
-This "manifesto", then seeks to advance the idea that with the right mix of design inputs, users can have acces to simple, user-friendly bitcoin self-custody, with reasonably solid security assurances, using inexpensive, discreetly-acquired hardware, & Free-And-Open-Source (FOSS) code.)
+This "manifesto", then seeks to advance the idea that with the right mix of design inputs, users can have access to simple, user-friendly bitcoin self-custody, with reasonably solid security assurances, using inexpensive, discreetly-acquired hardware, & Free-And-Open-Source code.)
 
 <br/><br/>
 <p align="center">
