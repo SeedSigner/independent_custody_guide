@@ -28,13 +28,13 @@ This "manifesto" then seeks to advance the idea that with the right mix of desig
 
 ## Table of Contents:
 
-[Introduction](https://github.com/SeedSigner/independent_custody_guide/blob/main/README.md#introduction)
+[Introduction](#introduction)
 [Why Multi-signature Wallets?](https://github.com/SeedSigner/independent_custody_guide/blob/main/README.md#why-multi-signature-wallets)
 [What's the story with this SeedSigner thing anyway?](https://github.com/SeedSigner/independent_custody_guide/blob/main/README.md#whats-the-story-with-this-seedsigner-thing-anyway)
 [Alright, But There's Got to Be a Catch, Right? (Concerns/Considerations)](https://github.com/SeedSigner/independent_custody_guide/blob/main/README.md#alright-but-theres-got-to-be-a-catch-right)
 [So What Does This SeedSigner Thing Actually Do?](https://github.com/SeedSigner/independent_custody_guide/blob/main/README.md#so-what-does-this-seedsigner-thing-actually-do)
 [How can I get my hands on a SeedSigner to try it out?](https://github.com/SeedSigner/independent_custody_guide/blob/main/README.md#alright-alright-this-all-sounds-pretty-cool-how-can-i-get-my-hands-on-a-seedsigner-to-try-it-out)
-
+[Testnet is the Best Way to, Well, Test](https://github.com/SeedSigner/independent_custody_guide/blob/main/README.md#testnet-is-the-best-way-to-well-test)
 
 
 ## Introduction
