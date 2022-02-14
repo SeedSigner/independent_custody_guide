@@ -24,7 +24,19 @@ This "manifesto" then seeks to advance the idea that with the right mix of desig
 <img src="images/era_3.png" width="600">
 </p>
 <br/><br/>
-  
+
+
+## Table of Contents:
+
+[Introduction](https://github.com/SeedSigner/independent_custody_guide/blob/main/README.md#introduction)
+[Why Multi-signature Wallets?](https://github.com/SeedSigner/independent_custody_guide/blob/main/README.md#why-multi-signature-wallets)
+[What's the story with this SeedSigner thing anyway?](https://github.com/SeedSigner/independent_custody_guide/blob/main/README.md#whats-the-story-with-this-seedsigner-thing-anyway)
+[Alright, But There's Got to Be a Catch, Right? (Concerns/Considerations)](https://github.com/SeedSigner/independent_custody_guide/blob/main/README.md#alright-but-theres-got-to-be-a-catch-right)
+[So What Does This SeedSigner Thing Actually Do?](https://github.com/SeedSigner/independent_custody_guide/blob/main/README.md#so-what-does-this-seedsigner-thing-actually-do)
+[How can I get my hands on a SeedSigner to try it out?](https://github.com/SeedSigner/independent_custody_guide/blob/main/README.md#alright-alright-this-all-sounds-pretty-cool-how-can-i-get-my-hands-on-a-seedsigner-to-try-it-out)
+
+
+
 ## Introduction
 
 Most bitcoiners understand the importance of self-custody to the larger bitcoin ecosystem -- as a digital bearer asset, being able to have personal custody of your coins is a huge part of the ethos of bitcoin (not your keys...not your coins). And holding one's own private keys is not merely some kind of bitcoiner virtue signaling exercise, but actually serves several important functions within the larger bitcoin ecosystem. Practicing self-custody:
@@ -326,7 +338,7 @@ One the camera is installed, the Pi Zero board is secured underneath four spacer
 <img src="images/compact_build.png" width="450">
 </p>
 
-## A Few Notes on Testnet:
+## Testnet is the Best Way to, Well, Test:
 
 For developers and others who want to experiment and conduct development testing with the bitcoin protocol without risking real funds, there are a few options out there, the most realistic and user-accessible of which is testnet. Testnet was technically the first “altcoin” and exists as a separate implementation of the bitcoin protocol. Testnet is an entirely separate network from the main bitcoin network, with its own nodes and miners, with the main difference being that testnet coins are intended to have zero value. Even though testnet is a powerful tool with which to learn and practice using bitcoin, the great majority of bitcoin users haven’t had any first-hand experience with it. This may partly be due to the fact that unfortunately not all wallets and other protocol-related tools support Testnet.
 
