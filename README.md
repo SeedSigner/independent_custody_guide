@@ -25,17 +25,16 @@ This "manifesto" then seeks to advance the idea that with the right mix of desig
 </p>
 <br/><br/>
 
-
 ## Quick Links:
 
 * [Introduction](#introduction)
-* [Why Multi-signature Wallets?](https://github.com/SeedSigner/independent_custody_guide/blob/main/README.md#why-multi-signature-wallets)
-* [What's the story with this SeedSigner thing anyway?](https://github.com/SeedSigner/independent_custody_guide/blob/main/README.md#whats-the-story-with-this-seedsigner-thing-anyway)
-* [Alright, But There's Got to Be a Catch, Right? (Concerns/Considerations)](https://github.com/SeedSigner/independent_custody_guide/blob/main/README.md#alright-but-theres-got-to-be-a-catch-right)
-* [So What Does This SeedSigner Thing Actually Do?](https://github.com/SeedSigner/independent_custody_guide/blob/main/README.md#so-what-does-this-seedsigner-thing-actually-do)
-* [How can I get my hands on a SeedSigner to try it out?](https://github.com/SeedSigner/independent_custody_guide/blob/main/README.md#alright-alright-this-all-sounds-pretty-cool-how-can-i-get-my-hands-on-a-seedsigner-to-try-it-out)
-[* Testnet is the Best Way to, Well, Test](https://github.com/SeedSigner/independent_custody_guide/blob/main/README.md#testnet-is-the-best-way-to-well-test)
-
+* [Why Multi-signature Wallets?](#why-multi-signature-wallets)
+* [What's the story with this SeedSigner thing anyway? (Ideation/Evolution)](#whats-the-story-with-this-seedsigner-thing-anyway)
+* [Alright, But There's Got to Be a Catch, Right? (Concerns/Considerations)](#alright-but-theres-got-to-be-a-catch-right)
+* [So What Does This SeedSigner Thing Actually Do? (Core Functionality)](#so-what-does-this-seedsigner-thing-actually-do)
+* [How can I get my hands on a SeedSigner to try it out? (Sourcing/Building)](#alright-alright-this-all-sounds-pretty-cool-how-can-i-get-my-hands-on-a-seedsigner-to-try-it-out)
+* [Testnet is the Best Way to, Well, Test](#testnet-is-the-best-way-to-well-test)
+* [Wallet Set-up and Spend Walkthrough](#can-we-get-started-with-the-actual-guide-already)
 
 ## Introduction
 
@@ -636,11 +635,8 @@ Variables you should be thinking about as you plan your storage scheme:
 
 **Mixing in Other Signing Devices?:** Though beyond the scope of this guide, some would argue that a mix of hardware wallets / signing devices from different manufacturers and/or with different code bases and security mechanisms can improve one's overall security posture (and I'm actually sympathetic to this argument). If I had to play devil's advocate regarding this position, I'd ask whether learning to become proficient with several hardware profiles justifies the advantages they bring in terms of technical diversity. A complimentary perspective is to not let the perfect be the enemy of the sufficiently good. You'll have to way the costs and benefits and decide for yourself how many different device profiles belong in your quorum.
 
-Encourage people to make suggestsions and edit via the PR process
+## Closing Thoughts
 
-What's the deal with Seed QR codes?
+As already stated, this guide is intended as a living document. As the SeedSigner project grows, the information in this guide will be updated (hopefully) in real-time. From the start, I will welcome your suggestions, even small grammar tweaks and spelling corrections -- please submit these in the form of "pull requests" in accordance with Gitian protocol. 
 
-(add an acknowledgement section)
-
-addendum opportunity: using seedsigner as a way to keep your hardware wallets honest
-note on the signer vs wallet designation
+Before closing this out, I would like to thank Nick & Keith for being willing to jump into this adventure and get their hands dirty, to @jevidon for his early review and suggestions on this document, and to **ALL** of the people who have contributed to SeedSigner, in the wide variety of ways that people have.
