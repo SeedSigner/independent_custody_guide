@@ -35,6 +35,7 @@ This "manifesto" then seeks to advance the idea that with the right mix of desig
 * [How can I get my hands on a SeedSigner to try it out? (Sourcing / Building)](#alright-alright-this-all-sounds-pretty-cool-how-can-i-get-my-hands-on-a-seedsigner-to-try-it-out)
 * [Testnet is the best way to, well, test...](#testnet-is-the-best-way-to-well-test)
 * [Wallet Set-up and Spend Walkthrough!](#can-we-get-started-with-the-actual-guide-already)
+* [Final Variables to Consider](#variables-to-consider)
 
 ## Introduction
 
@@ -165,18 +166,7 @@ The story behind how SeedSigner came into existence highlights the device's adva
 
 ## Alright, But There's Got to Be a Catch, Right?
 
-No technology, especially security-related technologies, are **ALL** positive, there have to be trade-offs or vulnerabilities. I will now list some of the criticisms/vulnerabilities of SeedSigner of which I am aware, and then briefly discuss my perspective on them one by one:
-
-- direct access to seeds increases their discloure opportunity
-- reliance on a single software/hardware set for multiple keys in a quorum
-- a full linux installation has a large attack surface
-- airgapped communication is security theatre that results in a worse user experience
-- unpaid developers don't have the time/expertise/care to properly "do security"
-- lack of software validity assurances leaves open the possibility of malicious code installation
-- an evil maid could use malicious code to exfiltrate private keys
-- the Broadcom BCM2835 chip used in Pi Zero is closed-source and potentially compromised
-
-These are the potential weaknesses/vulnerabilities that I've discerned, that have been communicated directly to me, or that I have gleaned from observing comments in public forums; if additional criticisms come to light, I will add them to this document.
+No technology, especially security-related technologies, are **ALL** positive, there have to be trade-offs or vulnerabilities. What follows is a list of the criticisms/vulnerabilities of SeedSigner of which I am aware; I will also briefly provide my perspective on each of them:
 
 **Direct access to seeds increases their disclosure opportunity:** This is a criticism that is reasonable and that I agree with. Though some people that appreciate the SeedSigner model have begun using it for more day-to-day storage needs, the larger model was designed with cold storage in mind, meaning that I anticipate bitcoin savers using the SeedSigner model would need to make outgoing transactions 1-2 times a year, if that. Deposits to a multi-signature wallet, including to newly-generated receive addresses, can of course be made without accessing private keys. So this means that your seed phrases should typically stay in some kind of remote, physically secure, non-visibly secure, tamper-evident storage spot. When you do access your seed phrases, obvious care should be taken to access them in areas that they will not be seen by unwanted persons, or in areas that are subject to visual surveillance, etc. It should also be noted that the use of a BIP39 passphrase in conjunction with your seeds can serve as an excellent mitigator to the risk of private key disclosure during seed access.
 
@@ -366,7 +356,7 @@ You’ll also need testnet coins to begin experimenting with the network; here a
 
 I emphatically suggest that as a critical part of creating and implementing your new multi-signature wallet, that you test and practice with Testnet. We can’t be skillful or truly confident about anything until we’ve practiced it, and an important part of implementing your own custody solution and holding bitcoin over the long-term is being confident in your storage scheme.
 
-The first “cold storage” setup that I created in 2013-14 was simply a series of offline-created private and public key pairs that I generated and printed onto slips of paper (courtesy of https://www.bitaddress.org/). And while this means of storage proved to be secure during the period of time I was using it, over time I became anxious about my setup because I had only minimally tested it and didn’t really have any opportunity to practice any sort of redemption/spending. Over time, as bitcoin tends to appreciate in value, I sincerely believe a kind of anxiety can set it and savers can begin to wonder if their accumulated value is “real”, or if they’ll be able to access their bitcoin when they want/need to. For me, this anxiety grew over a long bear market (2014-2016), and after bitcoin’s exchange rate started rising again the anxiety culminated in me moving all of my coins from cold storage into an exchange account, where they were subsequently sold in early 2017 during the “fork-wars” (see Hard Fork wars book?). It goes without saying that I own a lot less bitcoin now, and what I do own was all purchased at higher prices than those at which I panic sold.
+The first “cold storage” setup that I created in 2013-14 was simply a series of offline-created private and public key pairs that I generated and printed onto slips of paper (courtesy of https://www.bitaddress.org/). And while this means of storage proved to be secure during the period of time I was using it, over time I became anxious about my setup because I had only minimally tested it and didn’t really have any opportunity to practice any sort of redemption/spending. Over time, as bitcoin tends to appreciate in value, I sincerely believe a kind of anxiety can set it and savers can begin to wonder if their accumulated value is “real”, or if they’ll be able to access their bitcoin when they want/need to. For me, this anxiety grew over a long bear market (2014-2016), and after bitcoin’s exchange rate started rising again the anxiety culminated in me moving all of my coins from cold storage into an exchange account, where they were subsequently sold in early 2017 during the “fork-wars” (a good resource to learn more about this period of time is _The Blocksize War: The battle for control over Bitcoin’s protocol rules_ by Jonathan Bier). It goes without saying that I own a lot less bitcoin now, and what I do own was all purchased at higher prices than those at which I panic sold.
 
 A big part of my mission with SeedSigner is to help people avoid making a similar mistake — friends don’t let friends sell bitcoin. Don’t be weak-handed like I was. Take the time to think through how you’ll be **most comfortable** holding your coins over the long term. And then bring that hypothetical setup into reality.
 
@@ -605,21 +595,9 @@ Repeat the preceding steps with your SeedSigner to sign with either "SeedSigner 
 
 Congratulations! You should now be able to click the "Broadcast Transaction" button, which is the final step in the spending process. This step communicates your transaction, including the signatures generated with your SeedSigner, to other members of the bitcoin network and enters it into the queue for inclusion in a block. You will notice that in transaction window, the "Status" will be referenced as "Unconfirmed" until the transaction is incorporated into a bitcoin block.
 
-## Zooming Back Out
+## Variables to Consider
 
-In the above steps, I've illustrated the basic processes of creating private keys, creating a multi-signature wallet using extended public keys, and signing transactions using your SeedSigner. As you contemplate setting up a multi-signature wallet for long term bitcoin storage, there are a number of variables that deserve careful consideration. To conclude this guide, I am going to list several of these variables and offer some perspective on each of them.
-
-Variables you should be thinking about as you plan your storage scheme:
-- electrum or node?
-- A quorum of how many?
-- 12 or 24 word seeds?
-- passphrases?
-- Duress/decoy funds?
-- metal or no metal?
-- How many copies of each key?
-- storage locations?
-- tamper resistant/evident?
-- Mixing signing devices?
+In the above steps, I've illustrated the basic processes of creating private keys, creating a multi-signature wallet using extended public keys, and signing transactions using your SeedSigner. As you contemplate setting up a multi-signature wallet for long term bitcoin storage, there are a number of variables that deserve careful consideration. To conclude this guide, I am going to touch on several of these variables and offer some perspective on each of them.
 
 **Electrum or Full Node?:** When you use your wallet coordinator to connect to a server managed by a third-party, you are implicitly trusting that source to provide up-to-date, accurate, honest information about the state of the bitcoin network. Interacting with a third-party server can also constitute a significant privacy leak given the nature of your coordinator's communication with it. Using your own full node is much more private and trust-less, but you'll either have to be willing to set up a dedicated computer to serve as your node, or utilize several hundred gigabytes of space on your local hard drive to run a full node there (note: it is possible to run a "pruned" node that does not contain a full historical copy of the entire bitcoin blockchain; there are some trade-offs with this approach but it may be a good compromise for a lot of users).
 
@@ -629,7 +607,7 @@ Variables you should be thinking about as you plan your storage scheme:
 
 **To Passphrase or Not To Passphrase?:** The most important thing to understand about this decision is that adding a passphrase to your seed is to understand that doing so transforms the private key associated with the seed into a wholly new private key that **cannot** be accessed without knowing the exact passphrase. Using a BIP39 passphrase can be an extremely powerful method of protecting your seeds from inadvertent or malicious disclosure, but the trade-off is that you are taking on the additional requirement that you need to be able to produce the correct passphrase when you want to make a spend. Each key in your quorum can have the same or a different passphrase, which creates additional safeguards, as well as additional complexity. If you are particularly concerned abaout key disclosure, the addition of a passphrase may be a good addition to your setup.
 
-**Duress/Decoy Funds?:**
+**Duress/Decoy Funds?:** The idea here is to take a seed (probably the one you will be storing in your home), create a single-signature wallet from that seed, and deposit some amount of bitcoin to the wallet. The idea behind this technique is that if someone attempts to coerce you (usually in-person, with physical violence) to give them your bitcoin, you can produce this wallet as "all you have" in an attempt to convince the attacker to leave. As this is a commonly-known technique, you'll have to decide whether it makes sense for your setup. The amount associated with the seed in your home is intended be enough to either convince the attacker it is all of the bitcoin you own, or at least enough to convince them it is worth their while to "take the money and run". 
 
 **Do You Like Heavy Metal?:** Over the long-term pen and marker can fade depending on the type and quality of writing device you are using, as well as the type and quality of the paper/cardboard you have selected, however regardless of how well you choose writing materials they are all succeptible to damge by fire. Metal QR solutions are likely to increase in quality and availability over time, but even a low-cost metal-washer backup (add seedmint link) is adequate to safeguard your seed words. If you end up selecting a 3-of-5 quorum, how likely is it that three of your seeds might be destroyed by fire, rendering your bitcoin holdings inaccessible? Only you can decide whether recording your seeds with metal is worth the additional time, trouble and expense.
 
@@ -643,6 +621,6 @@ Variables you should be thinking about as you plan your storage scheme:
 
 ## Closing Thoughts
 
-As already stated, this guide is intended as a living document. As the SeedSigner project grows, the information in this guide will be updated (hopefully) in real-time. From the start, I will welcome your suggestions, even small grammar tweaks and spelling corrections -- please submit these in the form of "pull requests" in accordance with Gitian protocol. 
+As already stated, this guide is intended as a living document. As the SeedSigner project grows, the information in this guide will be updated (hopefully) in real-time. From the start, I welcome your suggestions, even small grammar tweaks and spelling corrections -- please submit these in the form of either "pull requests" or "issues" within this repo.
 
-Before closing this out, I would like to thank Nick & Keith for being willing to jump into this adventure and get their hands dirty, to @jevidon for his early review and suggestions on this document, and to **ALL** of the people who have contributed to SeedSigner, in the wide variety of ways that people have.
+Before closing this out, I would like to thank my collaborators Nick & Keith for being willing to jump into this adventure with me head-first, and I'd also like to to thank **ALL** of the people who have contributed to SeedSigner, in the wide variety of ways that people have. I also appreciate @jevidon (Twitter) for his early review of this document.
