@@ -25,16 +25,16 @@ This "manifesto" then seeks to advance the idea that with the right mix of desig
 </p>
 <br/><br/>
 
-## Quick Links:
+## Quick Links (if you want to skip ahead):
 
 * [Introduction](#introduction)
 * [Why Multi-signature Wallets?](#why-multi-signature-wallets)
-* [What's the story with this SeedSigner thing anyway? (Ideation/Evolution)](#whats-the-story-with-this-seedsigner-thing-anyway)
-* [Alright, But There's Got to Be a Catch, Right? (Concerns/Considerations)](#alright-but-theres-got-to-be-a-catch-right)
-* [So What Does This SeedSigner Thing Actually Do? (Core Functionality)](#so-what-does-this-seedsigner-thing-actually-do)
-* [How can I get my hands on a SeedSigner to try it out? (Sourcing/Building)](#alright-alright-this-all-sounds-pretty-cool-how-can-i-get-my-hands-on-a-seedsigner-to-try-it-out)
-* [Testnet is the Best Way to, Well, Test](#testnet-is-the-best-way-to-well-test)
-* [Wallet Set-up and Spend Walkthrough](#can-we-get-started-with-the-actual-guide-already)
+* [What's the story with this SeedSigner thing anyway? (Ideation / Evolution)](#whats-the-story-with-this-seedsigner-thing-anyway)
+* [Alright, but there's got to be a catch, right? (Concerns / Considerations)](#alright-but-theres-got-to-be-a-catch-right)
+* [So what does this SeedSigner thing actually do? (Core Functionality)](#so-what-does-this-seedsigner-thing-actually-do)
+* [How can I get my hands on a SeedSigner to try it out? (Sourcing / Building)](#alright-alright-this-all-sounds-pretty-cool-how-can-i-get-my-hands-on-a-seedsigner-to-try-it-out)
+* [Testnet is the best way to, well, test...](#testnet-is-the-best-way-to-well-test)
+* [Wallet Set-up and Spend Walkthrough!](#can-we-get-started-with-the-actual-guide-already)
 
 ## Introduction
 
@@ -70,8 +70,11 @@ It also makes sense to list what you'll need early on so you can have an idea of
 - A printer with paper
 - Some sort of metal backup solution (optional, but strongly recommended)
 
-## First Off, Why Sparrow?
-
+<details>
+<summary>Before we get started, a quick sidebar: Why Sparrow for this guide? (click the triangle on the left to expand)</summary>
+ 
+<p>
+ 
 Sparrow is a software program that runs on each of the Big-3 computer OS platforms (Windows, Mac, Linux), and that can be described as a bitcoin "wallet coordinator". What this designation means is that while you can absolutely use it for single-signature wallets, a big part of Sparrow's value proposition is that you can use it to take multiple bitcoin private keys and "coordinate" them into a multi-signature wallet. Sparrow is designed to be run on a computer with an active intenet connection, and also manages your wallet's interaction with the larger bitcoin protocol.
 
 "Specter Desktop" (https://specter.solutions) is another high-quality software program that can be used to create and manage multi-signature bitcoin wallets, with functionality similar to Sparrow (side note: Specter also created & maintains an an airgapped DIY bitcoin signing device project that was a big part of the inspiration for SeedSigner; more into at https://github.com/cryptoadvance/specter-diy). Specter Desktop generally requires users to have/operate a full bitcoin node, which could be a standalone, purpose-built computer, or could be an instance of the bitcoin core software (https://github.com/bitcoin/bitcoin/releases) running on the same system where Specter Desktop is installed. Though running a full node is unarguably a more secure, more private way to access the bitcoin protocol (and something I personally think that most bitcoiners should do, or aspire to do), I didn't want it to be a deal-breaking requirement for this guide. As it also is with privacy, digging into bitcoin is a process and people should understand that you don't have to accomplish everything to become the "perfect" bitcoiner all at once. Responsibly undertaking self-custody in the proper way is a big enough task in and of itself.
@@ -79,6 +82,9 @@ Sparrow is a software program that runs on each of the Big-3 computer OS platfor
 "BlueWallet" (https://bluewallet.io) is another software program that can be used to create and manage multi-signature bitcoin wallets, but differently from Sparrow and Specture, BlueWallet is primarily intended for use on iOS and Android devices (though there is a Mac version too!). BlueWallet also does not require the use of a full node. Being a mobile-based coordinator is what makes BlueWallet so compelling given that in many parts of the world, mobile devices are the primary way people interact with bitcoin as well as the broader internet. BlueWallet is a high-quality, feature-ful application (you can use the Lightning network with it too!) but in my opinion BlueWallet's achilles heel, at least for the purposes of this guide, is that it does not support bitcoin testnet. (But more on Testnet in a bit...)
 
 The bottom line here is that I want to note that the multi-signature custody setup this guide intends to help users create can also **absolutely** be created and operated with both Specter Desktop or BlueWallet. Again though, with the goal of minimizing the number of decisions to be made, I have elected to focus on Sparrow.
+
+</details> 
+
 
 <p align="center">
 <img src="images/keys.jpg" width="300">
