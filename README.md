@@ -337,6 +337,8 @@ Once the camera is installed, the Pi Zero board is secured underneath four space
 
 For developers and others who want to experiment and conduct development testing with the bitcoin protocol without risking real funds, there are a few options out there, the most realistic and user-accessible of which is testnet. Testnet was technically the first “altcoin” and exists as a separate implementation of the bitcoin protocol. Testnet is an entirely separate network from the main bitcoin network, with its own nodes and miners, with the main difference being that testnet coins are intended to have zero value. Even though testnet is a powerful tool with which to learn and practice using bitcoin, the great majority of bitcoin users haven’t had any first-hand experience with it. This may partly be due to the fact that unfortunately not all wallets and other protocol-related tools support Testnet.
 
+For the greatest security, one should set up a fresh, single purpose laptop.  To do this, it is best to walk into a big box store and purchase a cheap laptop with cash anonymously.  Go home, and wipe this laptop with a fresh install of a Linux distro. This could be Ubuntu, Debian, Tails, etc. If you need help with the installation, follow the instructions of the respective websites.  Always remember to verify the download.  After setting up the laptop, only use it from now on for Sparrow and SeedSigner!
+
 The good news is that Sparrow supports Testnet and it's super simple to set up and use. The key step is to launch Sparrow from your system’s terminal / command prompt using a flag that specifies that you’d like to use testnet:
 
 * In Windows:   `Sparrow.exe -n testnet`
