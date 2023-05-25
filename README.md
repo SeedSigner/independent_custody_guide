@@ -551,13 +551,11 @@ These animated QR codes contain the already discussed "rough draft" of a transac
 
 Once the transaction is fully scanned in, you should see a message on the SeedSigner display that reads "PSBT Valid!". You will then navigate through the steps:
 
-Use Saved Seed? (Yes) --> (Select Seed Slot #) --> Add Seed Passphrase? (No)
-
 <p align="left">
 <img src="images/ss_txn_scan_in.png" width="750">
 </p>
 
-After completing these steps, SeedSigner will parse the PSBT and display the associated details:
+After completing these steps, SeedSigner will parse the PSBT and you have to approve it:
 
 <p align="left">
 <img src="images/ss_txn_details.png" width="188">
