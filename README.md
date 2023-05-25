@@ -371,7 +371,7 @@ With SeedSigner, from the main menu navigate to:
  Seed Tools —> Generate Seed with Image —> click joystick —> reshoot | accept
 
 <p align="left">
-<img src="images/seedsigner_create_seed_from_image.png" width="600">
+<img src="images/seedsigner_create_seed_from_image.png" width="750">
 </p>
 
 You will then be presented with two screens detailing the 24 word seed that represent the private key you just created. Write these words down and double-check the accuracy of what you copied. You will then be presented with the opportunity to press SeedSigner’s thumb-stick to the right to view the “QR Export” manual transcription interface. This interface allows you to convert your seed phrase to a single-frame QR code that can be used to quickly and easily import your private key into SeedSigner in the future. This “SeedQR” is then viewable in a zoomed-in interface to make the transcription process simpler.
@@ -381,7 +381,7 @@ The process to manually create a SeedQR typically takes about 10 minutes, but wi
 Examples of the SeedQR transcription interface:
 
 <p align="left">
-<img src="images/seedsigner_transcription_ui.png" width="600">
+<img src="images/seedsigner_transcription_ui.png" width="750">
 </p>
 
 We offer a few user-printable formats for documenting seed phrases and SeedQRs in our repo’s “docs” folder (https://github.com/SeedSigner/seedsigner/tree/main/docs)
@@ -395,7 +395,7 @@ Here is an example of a seed phrase and transcribed SeedQR using one of the form
 After you finish the QR transcription process, when asked if you want to “Save Seed?” you can decline this option, and you will be returned to the main menu. From there, go back into “Seed Tools” and select “Temp Seed Storage”. From there select a “Seed Slot” to temporarily store the seed while SeedSigner is powered on. Now scan your handmade SeedQR, and confirm that it scans properly and that the resulting words match what you have written down.
 
 <p align="left">
-<img src="images/seedsigner_reimport.png" width="600">
+<img src="images/seedsigner_reimport.png" width="365">
 </p>
 
 For the 2-of-3 wallet we’ll be setting up for testing, you will need to repeat this process two more times to create a total of three private keys. The good news is that as long as you’re comfortable you’ve maintained the secrecy of these keys during your testing, you can use them for your main-net long-term Bitcoin storage wallet if you like.
@@ -437,28 +437,22 @@ The next step is to add each of the cosigners, which are referred to as the wall
 **Important Step:** Return to your SeedSigner, and ensure that "Network" is set to "Testnet" within the SeedSigner settings.
 
 <p align="left">
-<img src="images/testnet.png" width="187">
+<img src="images/testnet.png" width="750">
 </p>
 
 Now follow this menu sequence, which assumes you have temporarily saved the seed(s) you want to use in SeedSigner:
 
-Seed Tools --> xPub from Seed --> Saved Seed? = Y --> Use Seed Slot ## --> (seedword review) -->
 
 <p align="left">
 <img src="images/xpub1.png" width="750">
 </p>
 
-(seedword review) --> Wallet Type = Multisig --> Derivation Path = Native Segwit -->
 
 <p align="left">
-<img src="images/xpub2.png" width="750">
+<img src="images/xpub2.png" width="562">
 </p>
 
-Which Wallet = Sparrow --> (Xpub Info review)
 
-<p align="left">
-<img src="images/xpub3.png" width="563">
-</p>
 
 After the Xpub Info Review screen, one or more QR codes will be displayed on the screen that represent your seed's extended public key.
 
