@@ -456,25 +456,19 @@ The next step is to add each of the cosigners, which are referred to as the wall
 
 Now follow this menu sequence, which assumes you have temporarily saved the seed(s) you want to use in SeedSigner:
 
-Seed Tools --> xPub from Seed --> Saved Seed? = Y --> Use Seed Slot ## --> (seedword review) -->
+ Seeds —> select your seed —> Export Xpub —> Multisig —> Native Segwit —> ...
 
 <p align="left">
 <img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/xpub1.png" width="750">
 </p>
 
-(seedword review) --> Wallet Type = Multisig --> Derivation Path = Native Segwit -->
+... Sparrow —> read caution message —> Export Xpub
 
 <p align="left">
 <img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/xpub2.png" width="750">
 </p>
 
-Which Wallet = Sparrow --> (Xpub Info review)
-
-<p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/xpub3.png" width="563">
-</p>
-
-After the Xpub Info Review screen, one or more QR codes will be displayed on the screen that represent your seed's extended public key.
+After the Xpub Details review screen, one or more QR codes will be displayed on the screen that represent your seed's extended public key.
 
 Now return to Sparrow and select the SeedSigner “Scan” button, which should activate your system's web-camera. Now scan the QR code(s) displayed on your SeedSigner into your computer:
 
@@ -511,7 +505,7 @@ Not much will appear to change within the Sparrow interface, but your new wallet
 
 It should be noted that your full wallet descriptor is designated as private **but not secret** information. This means that the information within the wallet descriptor, if acquired by a third party, could be used to monitor any and all of the transactions made with your wallet. **But** the wallet descriptor **does not** contain the information necessary to access any of your funds. This knowledge may impact how and where you choose to store your wallet descriptor; printed hard copies are of course fully acceptable, but you may also choose to store a copy of your wallet descriptor on your computer, over even in "the cloud" (aka, someone else's computer).
 
-SeedSigner is currently compatible with Specter's wallet descriptor format. To export a wallet descriptor using that format in Sparrow, with your wallet loaded, navigate to File --> Export:
+SeedSigner is currently compatible with Specter's wallet descriptor format. To export a wallet descriptor using that format in Sparrow, with your wallet loaded, navigate to File —> Export:
 
 <p align="left">
 <img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/file_export.png" width="300">
@@ -569,18 +563,18 @@ These animated QR codes contain the already discussed "rough draft" of a transac
 <img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/txn_scan.gif" width="500">
 </p>
 
-Once the transaction is fully scanned in, you should see a message on the SeedSigner display that reads "PSBT Valid!". You will then navigate through the steps:
+Once the transaction is fully scanned in, SeedSigner will show you the transaction details. You will then navigate through the steps:
 
-Use Saved Seed? (Yes) --> (Select Seed Slot #) --> Add Seed Passphrase? (No)
+ Review PSBT —> PSBT Math —> Will Send (recipients) —> Your Change
 
 <p align="left">
 <img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/ss_txn_scan_in.png" width="750">
 </p>
 
-After completing these steps, SeedSigner will parse the PSBT and display the associated details:
+If the transaction details displayed by your SeedSigner are correct, you can now authorize the transaction on the step of the process, click on: Approve PSBT
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/ss_txn_details.png" width="188">
+<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/sign_psbt.png" width="750">
 </p>
 
 Please note that some of the specific details displayed, such as the change amount and network fee amount, will likely be different. If the details don't look right, to abort the signing process just click the thumbstick to the left. If all of the details look correct and you would like to authorize the spend, click the thumbstick to the right. SeedSigner will add the necessary signature(s) to the PSBT, encode a revised version of it back into animated QR frames, and display an animated QR code containing the added signatures on SeedSigner's screen.
