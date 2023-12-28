@@ -371,7 +371,7 @@ With SeedSigner, from the main menu navigate to:
  Seeds –> Create a seed —> New seed (first option with the camera icon) —> click joystick —> reshoot | accept
 
 <p align="left">
-<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/seedsigner_create_seed_from_image.png" width="600">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/seedsigner_create_seed_from_image.png" width="750">
 </p>
 
 After choosing the length of your mmemonic, you will then be presented with a screen detailling your 12 or 24 word seed that represent the private key you just created. Write these words down and double-check the accuracy of what you copied using the "Verify Backup" option. Next, you will have the opportunity to access SeedSigner's manual transcription interface in order to export your private key in the form of a SeedQR. This interface allows you to convert your seed phrase to a single-frame QR code that can be used to quickly and easily import your private key into SeedSigner in the future. This “SeedQR” is then viewable in a zoomed-in interface to make the transcription process simpler.
@@ -400,7 +400,7 @@ Here is an example of a seed phrase and transcribed SeedQR using one of the form
 <img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/seed_qr_card_example.png" width="600">
 </p>
 
-After you finish the QR transcription process, you will have the option to verify your SeedQR has been properly transcribed. Now scan your handmade SeedQR, and confirm that it scans properly and that the resulting words match what you have written down. Once done, you will be redirected to your loaded seed menu.
+After you finish the QR transcription process, you will have the option to verify that the SeedQR has been properly transcribed. Now scan your handmade SeedQR, and confirm that it scans properly and that the resulting words match what you have written down. Once done, you will be redirected to your loaded seed menu.
 
 <p align="left">
 <img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/seedsigner_reimport.png" width="600">
@@ -451,7 +451,7 @@ The next step is to add each of the cosigners, which are referred to as the wall
 **Important Step:** Return to your SeedSigner, and ensure that "Network" is set to "Testnet" within the SeedSigner settings. From the home menu, navigate to Settings —> Advanced —> Bitcoin Network —> Testnet
 
 <p align="left">
-<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/testnet.png" width="187">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/testnet.png" width="750">
 </p>
 
 Now follow this menu sequence, which assumes you have temporarily saved the seed(s) you want to use in SeedSigner:
@@ -462,7 +462,7 @@ Now follow this menu sequence, which assumes you have temporarily saved the seed
 <img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/xpub1.png" width="750">
 </p>
 
-... Sparrow —> read caution message —> Export Xpub
+... Sparrow —> Export Xpub
 
 <p align="left">
 <img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/xpub2.png" width="750">
