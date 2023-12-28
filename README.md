@@ -381,7 +381,7 @@ From your loaded seed menu, navigate to:
  Backup Seed –> Export as SeedQR –> Select desired format
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/seedsigner_navigate_to_seedqr.png" width="600">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/seedsigner_navigate_to_seedqr.png" width="600">
 </p>
 
 The process to manually create a SeedQR typically takes about 10 minutes, but will save you much more, that is you won’t need to enter your seed word-by-word into SeedSigner for subsequent uses. It is worth noting at this point that your QR-encoded seed phrase should **never** be scanned into any device that connects to the internet; SeedSigner should likely be the only device that you ever use to scan your SeedQR, unless perhaps at some point in the future you might use it to enter your seed into another QR-enabled signing device or hardware wallet. Your SeedQR should **never** be scanned into your computer’s webcam, or scanned with your mobile phone’s camera as it represents secret information that could be used to access your funds. It should also be noted that for users leery of encoding your private key into QR-form, your seed words can be manually entered into SeedSigner at any point to set up a new wallet or authorize bitcoin transactions.
@@ -389,7 +389,7 @@ The process to manually create a SeedQR typically takes about 10 minutes, but wi
 Examples of the SeedQR transcription interface:
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/seedsigner_transcription_ui.png" width="600">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/seedsigner_transcription_ui.png" width="600">
 </p>
 
 We offer a few user-printable formats for documenting seed phrases and SeedQRs in our repo’s “docs” folder (https://github.com/SeedSigner/seedsigner/tree/main/docs)
@@ -397,13 +397,13 @@ We offer a few user-printable formats for documenting seed phrases and SeedQRs i
 Here is an example of a seed phrase and transcribed SeedQR using one of the forms available in the repo:
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/seed_qr_card_example.png" width="600">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/seed_qr_card_example.png" width="600">
 </p>
 
 After you finish the QR transcription process, you will have the option to verify your SeedQR has been properly transcribed. Now scan your handmade SeedQR, and confirm that it scans properly and that the resulting words match what you have written down. Once done, you will be redirected to your loaded seed menu.
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/seedsigner_reimport.png" width="600">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/seedsigner_reimport.png" width="600">
 </p>
 
 For the 2-of-3 wallet we’ll be setting up for testing, you will need to repeat this process two more times to create a total of three private keys. The good news is that as long as you’re comfortable you’ve maintained the secrecy of these keys during your testing, you can use them for your main-net long-term Bitcoin storage wallet if you like.
@@ -411,31 +411,31 @@ For the 2-of-3 wallet we’ll be setting up for testing, you will need to repeat
 Now that you have the necessary three keys created and documented, it’s time to create your testnet wallet in Sparrow. First, switch Sparrow to testnet, within the Sparrow menu, navigate to Tools —> Restart in Testnet. 
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/sparrow_switch_testnet.png" width="350">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/sparrow_switch_testnet.png" width="350">
 </p>
 
 Finally, from the same Sparrow menu, navigate to File —> New Wallet
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/sparrow_new_wallet.png" width="350">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/sparrow_new_wallet.png" width="350">
 </p>
 
 Give the wallet an appropriate name:
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/sparrow_name_wallet.png" width="450">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/sparrow_name_wallet.png" width="450">
 </p>
 
 Select “Multi signature” as the wallet Policy Type
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/sparrow_select_multisig.png" width="750">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/sparrow_select_multisig.png" width="750">
 </p>
 
 Making this selection will make the configurable option “Cosigners” appear in the upper righthand corner of the window:
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/sparrow_cosigners.png" width="750">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/sparrow_cosigners.png" width="750">
 </p>
 
 In the above image, you can see that the sliders are positioned such that the created wallet will have a total of three cosigners, and will require a minimum of two of the members to authorize a given transaction.
@@ -445,13 +445,13 @@ For the purposes of this guide, we will leave the Script Type as the “Native S
 The next step is to add each of the cosigners, which are referred to as the wallet’s “Keystores” in the Sparrow interface. For this wallet, there are three tabs in the Keystores section, each representing one of the cosigners in the multi-signature wallet quorum. Under the “Keystore 1” tab, you can select the “Airgapped Hardware Wallet” button, which will lead to a list of air-gapped hardware devices:
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/sparrow_select_airgapped_device.png" width="750">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/sparrow_select_airgapped_device.png" width="750">
 </p>
 
 **Important Step:** Return to your SeedSigner, and ensure that "Network" is set to "Testnet" within the SeedSigner settings. From the home menu, navigate to Settings —> Advanced —> Bitcoin Network —> Testnet
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/testnet.png" width="187">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/testnet.png" width="187">
 </p>
 
 Now follow this menu sequence, which assumes you have temporarily saved the seed(s) you want to use in SeedSigner:
@@ -459,13 +459,13 @@ Now follow this menu sequence, which assumes you have temporarily saved the seed
  Seeds —> select your seed —> Export Xpub —> Multisig —> Native Segwit —> ...
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/xpub1.png" width="750">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/xpub1.png" width="750">
 </p>
 
 ... Sparrow —> read caution message —> Export Xpub
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/xpub2.png" width="750">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/xpub2.png" width="750">
 </p>
 
 After the Xpub Details review screen, one or more QR codes will be displayed on the screen that represent your seed's extended public key.
@@ -473,7 +473,7 @@ After the Xpub Details review screen, one or more QR codes will be displayed on 
 Now return to Sparrow and select the SeedSigner “Scan” button, which should activate your system's web-camera. Now scan the QR code(s) displayed on your SeedSigner into your computer:
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/xpub_scan.png" width="750">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/xpub_scan.png" width="750">
 </p>
 
 **Important Note:** If the screen from your SeedSigner is causing a glare in the webcam preview window, you can press up or down on the SeedSigner thumb-stick to adjust the brightness of the displayed QR code; ambient lighting can also have an impact on your webcam's ability to focus. It should be noted that some low-budget laptops may not have a sufficiently high-resolution camera to scan SeedSigner's QR codes. Adjusting the "QR Density" setting to "Low" may also resolve webcam scanning difficulties. With some low-quality cameras, advanced techniques can be used to tweak settings and make the camera workable (This is a good resource: https://www.addictivetips.com/windows-tips/access-advanced-settings-for-the-integrated-webcam-on-windows-10/amp/). 
@@ -481,19 +481,19 @@ Now return to Sparrow and select the SeedSigner “Scan” button, which should 
 After the QR code(s) representing the extended public key have been scanned into Sparrow, the keystore tab will be renamed "SeedSigner" and information about the public key will be displayed in the Sparrow interface:
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/key_1_entered.png" width="750">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/key_1_entered.png" width="750">
 </p>
 
 Because this setup is using SeedSigner with three different keys, you can modify the keystore's "Label" to read "SeedSigner 1". After repeating the above process for the second and third keys in your quorum, your wallet configuration window should look similarly to:
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/all_keys_entered.png" width="750">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/all_keys_entered.png" width="750">
 </p>
 
 You may now click the "Apply" button in the lower right portion of the window to finalize the settings; Sparrow will display a final prompt asking if you would like to add a password to your wallet:
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/password_prompt.png" width="450">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/password_prompt.png" width="450">
 </p>
 
 For the purposes of this guide, we will leave these password fields blank and click "No Password".
@@ -508,19 +508,19 @@ It should be noted that your full wallet descriptor is designated as private **b
 SeedSigner is currently compatible with Specter's wallet descriptor format. To export a wallet descriptor using that format in Sparrow, with your wallet loaded, navigate to File —> Export:
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/file_export.png" width="300">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/file_export.png" width="300">
 </p>
 
 A dialogue box will appear with various wallet descriptor export formats visible, scroll down to the bottom where you will see an entry for "Specter Desktop":
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/specter_export.png" width="500">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/specter_export.png" width="500">
 </p>
 
 The "Show" option will display a QR code that contains the full wallet descriptor; you can screen-capture this QR code and print or save it as a file for future use:
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/wallet_descriptor.png" width="500">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/wallet_descriptor.png" width="500">
 </p>
 
 This QR formatting of the wallet descriptor will be useful when you want to verify a receive or change address using SeedSigner. You can also choose the "Export File" option, and you will have the opportunity to save a .json-formatted file that can also be used to recreate your multi-signature wallet should recovery ever be necessary.
@@ -528,7 +528,7 @@ This QR formatting of the wallet descriptor will be useful when you want to veri
 Now that you have created a multi-signature wallet and saved the wallet's descriptor, you're ready to receive some coins! To do so, you just need to visit the "Receive" section of the Sparrow wallet, along the left-hand side of the main window:
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/receive.png" width="750">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/receive.png" width="750">
 </p>
 
 From this section of the Sparrow interface you can access receive addresses as you require them without any need for any of your seed phrases. In this way, Sparrow can be used to accumulate bitcoin over the long term without needing to have immediate access to any of your private keys.
@@ -536,31 +536,31 @@ From this section of the Sparrow interface you can access receive addresses as y
 When you are ready to make a spend, visit the "Send" section of the Sparrow interface. Here you can enter the destination address, a label for the transaction, and of course the amount for the spend:
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/send.png" width="750">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/send.png" width="750">
 </p>
 
 The next step is to click "Create Transaction" in the lower-right portion of the window, which then gives you an overview of the transaction as it has been constructed:
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/txn.png" width="750">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/txn.png" width="750">
 </p>
 
 From this screen you can also inspect the transaction's inputs and outputs. If you're satisfied with the details, now click the large button at the bottom of the window that reads: "Finalize Transaction for Signing". Pressing this buttons makes the different signing options visible:
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/txn2.png" width="750">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/txn2.png" width="750">
 </p>
 
 From these options, first select "Show QR", which will bring up a window displaying an animated QR code:
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/txn_gif.gif" width="500">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/txn_gif.gif" width="500">
 </p>
 
 These animated QR codes contain the already discussed "rough draft" of a transaction, also referred to as a "PSBT". Now, with the animated QR code displayed, return to your SeedSigner and select "Scan QR" from the main menu. Aim your SeedSigner's camera at the animated QR code, using the live-display as a guide, and scan the transaction into the signer:
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/txn_scan.gif" width="500">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/txn_scan.gif" width="500">
 </p>
 
 Once the transaction is fully scanned in, SeedSigner will show you the transaction details. You will then navigate through the steps:
@@ -568,37 +568,37 @@ Once the transaction is fully scanned in, SeedSigner will show you the transacti
  Review PSBT —> PSBT Math —> Will Send (recipients) —> Your Change
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/ss_txn_scan_in.png" width="750">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/ss_txn_scan_in.png" width="750">
 </p>
 
 If the transaction details displayed by your SeedSigner are correct, you can now authorize the transaction on the step of the process, click on: Approve PSBT
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/sign_psbt.png" width="750">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/sign_psbt.png" width="750">
 </p>
 
 Please note that some of the specific details displayed, such as the change amount and network fee amount, will likely be different. If the details don't look right, to abort the signing process just click the thumbstick to the left. If all of the details look correct and you would like to authorize the spend, click the thumbstick to the right. SeedSigner will add the necessary signature(s) to the PSBT, encode a revised version of it back into animated QR frames, and display an animated QR code containing the added signatures on SeedSigner's screen.
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/signed_psbt_qrs.gif" width="400">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/signed_psbt_qrs.gif" width="400">
 </p>
 
 To get those signatures authorizing the transaction back into Sparrow, close the window displaying the animated QR code if you've not done so already, and select "Scan QR" from the Sparrow interface. Selecting this option will activate you webcam and allow you to scan the QR codes displayed on your SeedSigner into your computer:
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/ss_psbt_back_in.gif" width="500">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/ss_psbt_back_in.gif" width="500">
 </p>
 
 Once the SeedSigner QR set is fully scanned back into Sparrow, you will notice in the "Signatures" section that "SeedSigner 1" has now been shaded blue, indicating this member of your quorum has supplied the necessary signatures to authorize the spend:
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/sparrow_sig_1.png" width="750">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/sparrow_sig_1.png" width="750">
 </p>
 
 Repeat the preceding steps with your SeedSigner to sign with either "SeedSigner 2" or "SeedSigner 3" and the other "Signatures" section should become shaded in as well:
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/sparrow_sig_2.png" width="750">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/sparrow_sig_2.png" width="750">
 </p>
 
 Congratulations! You should now be able to click the "Broadcast Transaction" button, which is the final step in the spending process. This step communicates your transaction, including the signatures generated with your SeedSigner, to other members of the bitcoin network and enters it into the queue for inclusion in a block. You will notice that in transaction window, the "Status" will be referenced as "Unconfirmed" until the transaction is incorporated into a bitcoin block.
