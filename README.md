@@ -374,11 +374,11 @@ With SeedSigner, from the main menu navigate to:
 <img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/seedsigner_create_seed_from_image.png" width="600">
 </p>
 
-After choosing the length of your mmemonic, you will then be presented with a screen detailling your 12 or 24 word seed that represent the private key you just created. Write these words down and double-check the accuracy of what you copied using the "Verify Backup" option. Next, you will have the opportunity to access SeedSigner's manual transscription interface in order to export your private key in the form of a SeedQR. This interface allows you to convert your seed phrase to a single-frame QR code that can be used to quickly and easily import your private key into SeedSigner in the future. This “SeedQR” is then viewable in a zoomed-in interface to make the transcription process simpler.
+After choosing the length of your mmemonic, you will then be presented with a screen detailling your 12 or 24 word seed that represent the private key you just created. Write these words down and double-check the accuracy of what you copied using the "Verify Backup" option. Next, you will have the opportunity to access SeedSigner's manual transcription interface in order to export your private key in the form of a SeedQR. This interface allows you to convert your seed phrase to a single-frame QR code that can be used to quickly and easily import your private key into SeedSigner in the future. This “SeedQR” is then viewable in a zoomed-in interface to make the transcription process simpler.
 
 From your loaded seed menu, navigate to:
 
- Backup Seed –> Export as SeedQR –> Select desired format
+ Backup Seed –> Export as SeedQR –> select desired format
 
 <p align="left">
 <img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/seedsigner_navigate_to_seedqr.png" width="600">
