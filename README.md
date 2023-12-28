@@ -414,7 +414,7 @@ Now that you have the necessary three keys created and documented, it’s time t
 <img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/sparrow_switch_testnet.png" width="350">
 </p>
 
-Finally, from the same Sparrow menu, navigate to File —> New Wallet
+Then, from the same Sparrow menu, navigate to File —> New Wallet
 
 <p align="left">
 <img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/sparrow_new_wallet.png" width="350">
@@ -462,7 +462,7 @@ Now follow this menu sequence, which assumes you have temporarily saved the seed
 <img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/xpub1.png" width="750">
 </p>
 
-... Sparrow —> Export Xpub
+ ... Sparrow —> Export Xpub
 
 <p align="left">
 <img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/xpub2.png" width="750">
@@ -571,13 +571,13 @@ Once the transaction is fully scanned in, SeedSigner will show you the transacti
 <img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/ss_txn_scan_in.png" width="750">
 </p>
 
-If the transaction details displayed by your SeedSigner are correct, you can now authorize the transaction on the step of the process, click on: Approve PSBT
+Please note that some of the specific details displayed, such as the change amount and network fee amount, will likely be different. If the details don't look right, to abort the signing process just click the thumbstick to the left. If all of the details look correct and you would like to authorize the spend, click on: Approve PSBT
 
 <p align="left">
 <img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/sign_psbt.png" width="250">
 </p>
 
-Please note that some of the specific details displayed, such as the change amount and network fee amount, will likely be different. If the details don't look right, to abort the signing process just click the thumbstick to the left. If all of the details look correct and you would like to authorize the spend, click the thumbstick to the right. SeedSigner will add the necessary signature(s) to the PSBT, encode a revised version of it back into animated QR frames, and display an animated QR code containing the added signatures on SeedSigner's screen.
+SeedSigner will add the necessary signature(s) to the PSBT, encode a revised version of it back into animated QR frames, and display an animated QR code containing the added signatures on SeedSigner's screen.
 
 <p align="left">
 <img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/signed_psbt_qrs.gif" width="400">
