@@ -408,7 +408,7 @@ After you finish the QR transcription process, you will have the option to verif
 
 For the 2-of-3 wallet we’ll be setting up for testing, you will need to repeat this process two more times to create a total of three private keys. The good news is that as long as you’re comfortable you’ve maintained the secrecy of these keys during your testing, you can use them for your main-net long-term Bitcoin storage wallet if you like.
 
-Now that you have the necessary three keys created and documented, it’s time to create your testnet wallet in Sparrow. First, switch Sparrow to testnet, within the Sparrow menu, navigate to Tools —> Restart in Testnet. 
+Now that you have the necessary three keys created and documented, it’s time to create your testnet wallet in Sparrow. First, switch Sparrow from mainnet to testnet; within the Sparrow menu, navigate to Tools —> Restart in Testnet
 
 <p align="left">
 <img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/sparrow_switch_testnet.png" width="350">
@@ -456,13 +456,13 @@ The next step is to add each of the cosigners, which are referred to as the wall
 
 Now follow this menu sequence, which assumes you have temporarily saved the seed(s) you want to use in SeedSigner:
 
- Seeds —> select your seed —> Export Xpub —> Multisig —> Native Segwit —> ...
+Seeds —> select your seed —> Export Xpub —> Multisig —> Native Segwit —> ...
 
 <p align="left">
 <img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/xpub1.png" width="750">
 </p>
 
- ... Sparrow —> Export Xpub
+... Sparrow —> Export Xpub
 
 <p align="left">
 <img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/xpub2.png" width="750">
@@ -563,9 +563,9 @@ These animated QR codes contain the already discussed "rough draft" of a transac
 <img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/txn_scan.gif" width="500">
 </p>
 
-Once the transaction is fully scanned in, SeedSigner will show you the transaction details. You will then navigate through the steps:
+Once the transaction is fully scanned in, SeedSigner will display the transaction details. You will then navigate through the steps:
 
- Review PSBT —> PSBT Math —> Will Send (recipients) —> Your Change
+Review PSBT —> PSBT Math —> Will Send (recipients) —> Your Change
 
 <p align="left">
 <img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/ss_txn_scan_in.png" width="750">
