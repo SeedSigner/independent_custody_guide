@@ -389,7 +389,7 @@ The process to manually create a SeedQR typically takes about 10 minutes, but wi
 Examples of the SeedQR transcription interface:
 
 <p align="left">
-<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/seedsigner_transcription_ui.png" width="600">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/seedsigner_transcription_ui.png" width="750">
 </p>
 
 We offer a few user-printable formats for documenting seed phrases and SeedQRs in our repo’s “docs” folder (https://github.com/SeedSigner/seedsigner/tree/main/docs)
@@ -403,7 +403,7 @@ Here is an example of a seed phrase and transcribed SeedQR using one of the form
 After you finish the QR transcription process, you will have the option to verify that the SeedQR has been properly transcribed. Now scan your handmade SeedQR, and confirm that it scans properly and that the resulting words match what you have written down. Once done, you will be redirected to your loaded seed menu.
 
 <p align="left">
-<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/seedsigner_reimport.png" width="600">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/seedsigner_reimport.png" width="750">
 </p>
 
 For the 2-of-3 wallet we’ll be setting up for testing, you will need to repeat this process two more times to create a total of three private keys. The good news is that as long as you’re comfortable you’ve maintained the secrecy of these keys during your testing, you can use them for your main-net long-term Bitcoin storage wallet if you like.
@@ -423,7 +423,7 @@ Finally, from the same Sparrow menu, navigate to File —> New Wallet
 Give the wallet an appropriate name:
 
 <p align="left">
-<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/sparrow_name_wallet.png" width="450">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/sparrow_name_wallet.png" width="550">
 </p>
 
 Select “Multi signature” as the wallet Policy Type
@@ -445,7 +445,7 @@ For the purposes of this guide, we will leave the Script Type as the “Native S
 The next step is to add each of the cosigners, which are referred to as the wallet’s “Keystores” in the Sparrow interface. For this wallet, there are three tabs in the Keystores section, each representing one of the cosigners in the multi-signature wallet quorum. Under the “Keystore 1” tab, you can select the “Airgapped Hardware Wallet” button, which will lead to a list of air-gapped hardware devices:
 
 <p align="left">
-<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/sparrow_select_airgapped_device.png" width="750">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/sparrow_select_airgapped_device.png" width=450">
 </p>
 
 **Important Step:** Return to your SeedSigner, and ensure that "Network" is set to "Testnet" within the SeedSigner settings. From the home menu, navigate to Settings —> Advanced —> Bitcoin Network —> Testnet
@@ -473,7 +473,7 @@ After the Xpub Details review screen, one or more QR codes will be displayed on 
 Now return to Sparrow and select the SeedSigner “Scan” button, which should activate your system's web-camera. Now scan the QR code(s) displayed on your SeedSigner into your computer:
 
 <p align="left">
-<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/xpub_scan.png" width="750">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/xpub_scan.png" width="600">
 </p>
 
 **Important Note:** If the screen from your SeedSigner is causing a glare in the webcam preview window, you can press up or down on the SeedSigner thumb-stick to adjust the brightness of the displayed QR code; ambient lighting can also have an impact on your webcam's ability to focus. It should be noted that some low-budget laptops may not have a sufficiently high-resolution camera to scan SeedSigner's QR codes. Adjusting the "QR Density" setting to "Low" may also resolve webcam scanning difficulties. With some low-quality cameras, advanced techniques can be used to tweak settings and make the camera workable (This is a good resource: https://www.addictivetips.com/windows-tips/access-advanced-settings-for-the-integrated-webcam-on-windows-10/amp/). 
@@ -574,7 +574,7 @@ Once the transaction is fully scanned in, SeedSigner will show you the transacti
 If the transaction details displayed by your SeedSigner are correct, you can now authorize the transaction on the step of the process, click on: Approve PSBT
 
 <p align="left">
-<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/sign_psbt.png" width="750">
+<img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/sign_psbt.png" width="250">
 </p>
 
 Please note that some of the specific details displayed, such as the change amount and network fee amount, will likely be different. If the details don't look right, to abort the signing process just click the thumbstick to the left. If all of the details look correct and you would like to authorize the spend, click the thumbstick to the right. SeedSigner will add the necessary signature(s) to the PSBT, encode a revised version of it back into animated QR frames, and display an animated QR code containing the added signatures on SeedSigner's screen.
