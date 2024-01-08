@@ -406,7 +406,7 @@ After you finish the QR transcription process, you will have the option to verif
 <img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/seedsigner_reimport.png" width="750">
 </p>
 
-For the 2-of-3 wallet we’ll be setting up for testing, you will need to repeat this process two more times to create a total of three private keys. The good news is that as long as you’re comfortable you’ve maintained the secrecy of these keys during your testing, you can use them for your main-net long-term Bitcoin storage wallet if you like.
+For the 2-of-3 wallet we’ll be setting up for testing, you will need to repeat this process two more times to create a total of three private keys. The good news is that as long as you’re comfortable you’ve maintained the secrecy of these keys during your testing, you can use them for your mainnet long-term Bitcoin storage wallet if you like.
 
 Now that you have the necessary three keys created and documented, it’s time to create your testnet wallet in Sparrow. First, switch Sparrow from mainnet to testnet; within the Sparrow menu, navigate to Tools —> Restart in Testnet
 
@@ -505,7 +505,7 @@ Not much will appear to change within the Sparrow interface, but your new wallet
 
 It should be noted that your full wallet descriptor is designated as private **but not secret** information. This means that the information within the wallet descriptor, if acquired by a third party, could be used to monitor any and all of the transactions made with your wallet. **But** the wallet descriptor **does not** contain the information necessary to access any of your funds. This knowledge may impact how and where you choose to store your wallet descriptor; printed hard copies are of course fully acceptable, but you may also choose to store a copy of your wallet descriptor on your computer, over even in "the cloud" (aka, someone else's computer).
 
-SeedSigner is currently compatible with Specter's wallet descriptor format. To export a wallet descriptor using that format in Sparrow, with your wallet loaded, navigate to File —> Export:
+SeedSigner is currently compatible with Specter's wallet descriptor format. To export a wallet descriptor using that format in Sparrow, with your wallet loaded, navigate to File —> Export Wallet:
 
 <p align="left">
 <img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/file_export.png" width="300">
@@ -545,7 +545,7 @@ The next step is to click "Create Transaction" in the lower-right portion of the
 <img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/txn.png" width="750">
 </p>
 
-From this screen you can also inspect the transaction's inputs and outputs. If you're satisfied with the details, now click the large button at the bottom of the window that reads: "Finalize Transaction for Signing". Pressing this buttons makes the different signing options visible:
+From this screen you can also inspect the transaction's inputs and outputs. If you're satisfied with the details, now click the large button at the bottom of the window that reads: "Finalize Transaction for Signing". Pressing this button makes the different signing options visible:
 
 <p align="left">
 <img src="https://github.com/char-lie/independent_custody_guide/blob/main/images/txn2.png" width="750">
