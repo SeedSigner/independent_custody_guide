@@ -261,7 +261,7 @@ And of course, let’s look at these one by one:
 
 Raspberry Pi has become almost synonymous with the Single Board Computer (SBC), and over time the Raspberry Pi ecosystem has evolved to offer multiple SBC profiles. The flagship Raspberry Pi model is commonly used by many to build stand-alone bitcoin nodes, but the Raspberry Pi Zero was first introduced in 2015 as a smaller, more streamlined version of the Raspberry Pi. 
 
-<p align="center">
+<p align="left">
 <img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/rpi_zero_v1_3.PNG" width="450">
 </p>
 
@@ -294,7 +294,7 @@ https://www.waveshare.com/1.3inch-lcd-hat.htm
 
 This display + controls module can commonly be acquired for $15 or less, though it will likely have to be ordered via the internet. One of the biggest advantages of this hardware module is that Waveshare has made a python-friendly driver publicly available; this driver made it easy to hit the ground running with the hardware and begin experimenting. I initially started working with a slightly different 120x120 pixel display + controls module, but it quickly became apparent that given the small screen size, the additional pixels would come in handy.
 
-<p align="center">
+<p align="left">
 <img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/waveshare_hat.PNG" width="450">
 </p>
 
@@ -312,7 +312,7 @@ This camera can commonly be acquired for $10 or less and is quite capable given 
 
 It should be noted that the above camera is also manufactured in a more compact build profile that is specifically designed for the Pi Zero and has some of the electrical components built into the ribbon cable itself:
 
-<p align="center">
+<p align="left">
 <img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/zerocam.PNG" width="450">
 </p>
 
