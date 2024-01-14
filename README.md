@@ -17,7 +17,7 @@ I consider the second epoch to be the hardware wallet era; that is, the era of p
 In my view, the third custody epoch is being ushered in by the PSBT (partially signed bitcoin transaction) standard, the implementation and refinement of multi-signature wallet standards, and the ongoing re-thinking of how we can increase the separation between devices/software that interact with the bitcoin protocol, and devices/software that interact with private keys. I believe that stateless signing devices (like SeedSigner) which leverage transparently airgapped communication (read QR-exchange protocol rather than NFC), with a focus on facilitating user-accessible multi-signature wallet use, will emerge as emblematic of this third epoch. The DIY approach of SeedSigner, leveraging general purpose hardware and Free-And-Open-Source code, will also serve to shift control away from purveyors of purpose-built, proprietary hardware wallets, moving that power back into the hands of users.
 
 <p align="justify">
-This "manifesto" then seeks to advance the idea that with the right mix of design inputs, users can have access to simple, user-friendly bitcoin self-custody, with reasonably solid security assurances, using inexpensive, discreetly-acquired hardware, & FOSS code.)
+This "manifesto" then seeks to advance the idea that with the right mix of design inputs, users can have access to simple, user-friendly bitcoin self-custody, with solid security assurances, using inexpensive, discreetly-acquired hardware, & FOSS code.)
 
 <br/><br/>
 <p align="center">
@@ -51,7 +51,7 @@ Understandably, the first reason above, that is securing one's assets, is the pr
 
 I am assembling this guide as a living document to (hopefully) help people get to that self-custody finish line, using the custody framework that has evolved over time to make the most sense to me. When engineering a self-custody system, there are numerous variables to consider -- I've tried to minimize the branches of the decision tree in this guide to make the process less overwhelming for people who might be prone to obsessing over the details. I'll also attempt to justify these choices wherever I can. Depending on your situation, it may be appropriate to work through this guide with some kind of "Uncle Jim" or self-custody "coach", who can provide further context and answer questions along the way. However with a few select supplemental materials, this document may also serve as a guide for those intent on pursuing a more self-guided custody journey.
 
-I should also note that early on in this guide, portions of it may read more like an essay and less like a technical guide. Though I initially set out to write a more step-oriented instructional document, questions of "why" and "how" persistently kept coming up. To get the full picture of what makes SeedSigner so different from most bitcoin storage devices, and in turn what makes the SeedSigner model so valuable, it made sense to go into the thinking behind some of the engineering choices that have brought the project to where it currently stands. Fruther, if people don't understand the "why" behind their actions, they're not going to have a high degree of confidence in, or conviction about, what they're doing. And because I believe confidence is a **huge** part of executing a bitcoin savings plan, I'm going to allow for a fair amount of digression, tangents and detours.
+I should also note that early on in this guide, portions of it may read more like an essay and less like a technical guide. Though I initially set out to write a more step-oriented instructional document, questions of "why" and "how" persistently kept coming up. To get the full picture of what makes SeedSigner so different from most bitcoin storage devices, and in turn what makes the SeedSigner model so valuable, it made sense to go into the thinking behind some of the engineering choices that have brought the project to where it currently stands. Further, if people don't understand the "why" behind their actions, they're not going to have a high degree of confidence in, or conviction about, what they're doing. And because I believe confidence is a **huge** part of executing a bitcoin savings plan, I'm going to allow for a fair amount of digression, tangents and detours.
 
 But back to nuts and bolts; at this point it's useful to list some assumptions this guide makes about its intended audience:
 
@@ -81,6 +81,11 @@ Sparrow is a software program that runs on each of the Big-3 computer OS platfor
 "Specter Desktop" (https://specter.solutions) is another high-quality software program that can be used to create and manage multi-signature bitcoin wallets, with functionality similar to Sparrow (side note: Specter also created & maintains an an airgapped DIY bitcoin signing device project that was a big part of the inspiration for SeedSigner; more info at https://github.com/cryptoadvance/specter-diy). Specter Desktop generally requires users to have/operate a full bitcoin node, which could be a standalone, purpose-built computer, or could be an instance of the bitcoin core software (https://github.com/bitcoin/bitcoin/releases) running on the same system where Specter Desktop is installed. Though running a full node is unarguably a more secure, more private way to access the bitcoin protocol (and something I personally think that most bitcoiners should do, or aspire to do), I didn't want it to be a deal-breaking requirement for this guide. As it also is with privacy, digging into bitcoin is a process and people should understand that you don't have to accomplish everything to become the "perfect" bitcoiner all at once. Responsibly undertaking self-custody in the proper way is a big enough task in and of itself.
 
 "BlueWallet" (https://bluewallet.io) is another software program that can be used to create and manage multi-signature bitcoin wallets, but differently from Sparrow and Specter, BlueWallet is primarily intended for use on iOS and Android devices (though there is a Mac version too). BlueWallet also does not require the use of a full node. Being a mobile-based coordinator is what makes BlueWallet so compelling given that in many parts of the world, mobile devices are the primary way people interact with bitcoin as well as the broader internet. BlueWallet is a high-quality, feature-ful application (you can use the Lightning network with it too!) but in my opinion BlueWallet's achilles heel, at least for the purposes of this guide, is that it does not support bitcoin testnet. (But more on Testnet in a bit...)
+
+Update: Since the creation of this guide, these additional mobile coordinators that are compatible with SeedSigner are available:
+
+"Nunchuk" (https://nunchuk.io)
+"Keeper" (https://bitcoinkeeper.app)
 
 The bottom line here is this: all of the options above will work great, but for the sake of keeping instructions from getting too overwhelming I have elected to use Sparrow for this guide.
 
@@ -168,7 +173,7 @@ The story behind how SeedSigner came into existence highlights the device's adva
 
 No technology, especially security-related technologies, are **ALL** positive, there have to be trade-offs or vulnerabilities. What follows is a list of the criticisms/vulnerabilities of SeedSigner of which I am aware; I will also briefly provide my perspective on each of them:
 
-**Direct access to seeds increases their disclosure opportunity:** This is a criticism that is reasonable and that I agree with. Though some people that appreciate the SeedSigner model have begun using it for more day-to-day storage needs, the larger model was designed with cold storage in mind, meaning that I anticipate bitcoin savers using the SeedSigner model would need to make outgoing transactions 1-2 times a year, if that. Deposits to a multi-signature wallet, including to newly-generated receive addresses, can of course be made without accessing private keys. So this means that your seed phrases should typically stay in some kind of remote, physically secure, non-visibly secure, tamper-evident storage spot. When you do access your seed phrases, obvious care should be taken to access them in areas that they will not be seen by unwanted persons, or in areas that are subject to visual surveillance, etc. It should also be noted that the use of a BIP39 passphrase in conjunction with your seeds can serve as an excellent mitigator to the risk of private key disclosure during seed access.
+**Direct access to seeds increases their disclosure opportunity:** This is a criticism that is reasonable and that I agree with. Though some people that appreciate the SeedSigner model have begun using it for more day-to-day storage needs, the larger model was designed with cold storage in mind, meaning that I anticipate bitcoin savers using the SeedSigner model might typically need to make outgoing transactions 1-2 times a year (for larger spends, or perhaps to consolidate UTXOs). Deposits to a multi-signature wallet, including to newly-generated receive addresses, can of course be made without accessing private keys. So this means that your seed phrases should typically stay in some kind of remote, physically secure, non-visibly secure, tamper-evident storage spot. When you do access your seed phrases, obvious care should be taken to access them in areas that they will not be seen by unwanted persons, or in areas that are subject to visual surveillance, etc. It should also be noted that the use of a BIP39 passphrase in conjunction with your seeds can serve as an excellent mitigator to the risk of private key disclosure during seed access.
 
 **Reliance on a single software/hardware set for multiple keys in a quorum:** This is an absolutely reasonable concern -- the idea behind it is that if a single device is used for all members of a multi-signature quorum, should should some critical flaw be found in a private key storage/signing mechanism, the security of the entire quorum could be jeopardized. **Best** practice would be to use multiple different software/hardware profiles to represent the cosigners of a multi-signature wallet, so should a vulnerability be found, a critical majority of the members would not be compromised. In this guide, in exchange for relying on a single device, a user obtains the cost-savings of not having to acquire several different hardware wallets, as well as the advantage of not needing to learn to become fluent in the proper use & maintenance of several different bitcoin storage/signing devices. Given some of SeedSigner's unique design elements, I believe our model effectively manages the downside risk of this issue, but individual users will have to decide whether they agree with this trade-off. As I often tell people, it's important not to let the perfect be the enemy of the **really good** as you consider different trade-offs.
 
@@ -182,7 +187,15 @@ No technology, especially security-related technologies, are **ALL** positive, t
 
 **An evil maid could use malicious code to exfiltrate private keys:** The "evil maid" attack typically describes a malevolent third party who has access to a given individual's private space, and happens to inadvertently & secretly come across sensitive or valuable items or information that they subsequently steal or otherwise exploit. In the context of SeedSigner, this attack might be renamed the "evil adversary that can create sophisticated malware, and then secretly accesses your signing device on multiple occasions, installing undetectable rogue software, and subsequently secretly returning to abscond with your private key(s)... attack". I don't want to write this type of attack off as far-fetched, but reasonable countermeasures are to store your SeedSigner in a relatively secure place, use tamper-evident packaging if you feel it to be necessary given your home environment, and if for some specific reason you become concerned that your SeedSigner software may have been tampered with, simply zero out your MicroSD and re-write the SeedSigner prepared release image to your memory card.
 
-**The Broadcom BCM2835 chip used in Pi Zero is closed source and potentially compromised:** This is perhaps the most vague criticism of SeedSigner I have come across. I haven't located any information to indicate a specific backdoor or other vulnerability relating to the Broadcom chip used on the Raspberry Pi Zero that would create a security vulnerability relating to SeedSigner. Honestly, if the broader Broadcom ecosystem has an undisclosed vulnerability, the entire bitcoin network is likely in trouble given the popularity of the full-size Raspberry Pi as a full node hardware platform. (It also should be mentioned that it is equally not known whether any hardware wallets currently in production may have unknown, zero-day vulnerabilities that can be leveraged by either malicious private parties, or by government entities.)
+**The Broadcom BCM2835 chip used in Pi Zero is closed source and potentially compromised:** This is perhaps the most vague criticism of SeedSigner I have come across. I haven't located any information to indicate a specific backdoor or other vulnerability relating to the Broadcom chip used on the Raspberry Pi Zero that would create a security vulnerability relating to SeedSigner.
+
+**Portions of the Raspberry Pi firmware are closed source:** Part  of Raspberry Pi's foundational firmware related to the board's GPU is closed source, and while it is a small portion of the device's firmware, it's a fair criticism that the Raspberry Pi firmware is not fully open source and that this could create risk (just like you can't be "a little bit" pregnant, something is either open source, or it's not). For malicious code insertion to be possible via this avenue, the entire global Raspberry Pi software supply chain would need to be compromised so that every single device was loaded with the malicious functionality, because it is not known which individual devices throughout the world are destined to become signing devices. Given that a miniscule proportion of Raspberry Pi boards are used to build SeedSigners, relative to the total amount of boards produced and being used throughout the world, an attacker's motivation to attempt this kind of exploit is reasonably quite low. But the next question is, specifically how would such an attack work? An exploit somehow preserving key material on the Raspberry Pi board would require attackers to discern where compromised devices were being used as signers, and then of course gain physical access to the compromised devices in hopes they contained key material -- a pretty high bar for prospective attack. And given the isolated nature of a SeedSigner's operation, a simple key leak via QR code would also require the partner computer or mobile device to be compromised as well so the leaked key could be collected -- another pretty high bar for prospective attack. Please see the next bullet for additional perspective on this attack vector.
+
+**A final thought on these criticisms/vulnerabilities, and on higher level threat modeling:** If you are attempting to mitigate state-level threats that have the ability to covertly compromise entire hardware and software supply chains, please reference the graphic below that was taken from The Hitchhiker’s Guide to Online Anonymity (see: https://anonymousplanet.org/guide.html). **All** hardware devices are vulnerable to this level of interference, and corporate hardware wallets that are purpose-built and marketed/distributed specifically to secure private keys would be a much more productive target for the extensive resources required to successfully execute such an attack.
+
+<p align="center">
+<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/hitchhikers_guide.jpeg" width="450">
+</p>
 
 ## So What Does This SeedSigner Thing Actually Do?
 
@@ -204,7 +217,7 @@ Rather than waiting the 9-months it takes to form human fingerpints, bitcoiners 
 
 Another way of creating a private key from physical inputs is to capture entropy from the results of dice-rolls and convert those results into a private key, and in turn a seed phrase for documentation. SeedSigner supports this method of generating a private key, and does so in a way that is verifiable using other tools, like those produced by Ian Coleman (https://iancoleman.io/bip39/) and Coinkite (https://coldcard.com/docs/verifying-dice-roll-math).
 
-The last way of creating a private key with SeedSigner is to use the entropy from a digital photograph taken using the device's on-board camera. The entropy captured from this process is a "more than meets the eye" feature because not only the pixels in the photograph are used to determine the private key, but also the data from each preview image frame that is rendered on the screen after the feature is activated, as well as the Pi Zero's unique serial number, and the number of milliseconds the device has been powered on. The randomness from these variables is aggregated to capture the entropy that goes a private key generated with this approach. It should be noted that while this method is a very convenient way of quickly converting real-world entropy into a secure private key, of the three methods it is the one that places the most trust in SeedSigner’s code.
+The last way of creating a private key with SeedSigner is to use the entropy from a digital photograph taken using the device's on-board camera. The entropy captured from this process is a "more than meets the eye" feature because not only the pixels in the photograph are used to determine the private key, but also the data from each preview image frame that is rendered on the screen after the feature is activated, as well as the Pi Zero's unique serial number, and the number of milliseconds the device has been powered on. The randomness from these variables is aggregated to capture the entropy that goes into a private key generated with this approach. It should be noted that while this method is a very convenient way of quickly converting real-world entropy into a secure private key, of the three methods it is the one that places the most trust in SeedSigner’s code.
 
 ### Generating Extended Public Keys Used During Initial Wallet Configuration
 
@@ -248,7 +261,9 @@ And of course, let’s look at these one by one:
 
 Raspberry Pi has become almost synonymous with the Single Board Computer (SBC), and over time the Raspberry Pi ecosystem has evolved to offer multiple SBC profiles. The flagship Raspberry Pi model is commonly used by many to build stand-alone bitcoin nodes, but the Raspberry Pi Zero was first introduced in 2015 as a smaller, more streamlined version of the Raspberry Pi. 
 
-(insert image of Raspberry Pi Zero)
+<p align="center">
+<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/rpi_zero_v1_3.PNG" width="450">
+</p>
 
 As previously noted, the absence of WiFi/Bluetooth hardware makes the 1.3 version ideal for use as an inherently air-gapped system. It should also be noted that SeedSigner is confirmed to be compatible with several other versions of Raspberry Pi SBCs:
 
@@ -257,7 +272,7 @@ As previously noted, the absence of WiFi/Bluetooth hardware makes the 1.3 versio
 
 Some of the above alternative models generally come with wireless technology pre-installed. As availability of the Pi Zero v1.3 waned throughout 2021, as of SeedSigner version 4.5.0, the software modules necessary for WiFi & Bluetooth use have been excluded from the prepared releases available in the SeedSigner GitHub repository. The result of this exclusion is that when using SeedSigner version 0.4.5 or above with one of the above-listed alternative Raspberry Pi models, a “software air-gap” is in place. Use of this software air-gap however entails placing additional trust in the prepared release, so the use of a Zero v1.3 is recommended for full assurance that wireless communication is not possible with SeedSigner.
 
-In late 2021, The Raspberry Pi foundation updated the Zero model with the Zero 2W model that included a faster processor. Given the scarcity of the Zero v1.3, community members sprang into action, intent to figure out a way to physically disable the 2W’s wireless communication capabilities. Multiple approaches emerged, but for the more technical and fearless, one of the simpler approaches is outlined here:
+Given the scarcity of the Zero v1.3, community members sprang into action, intent to figure out a way to physically disable the wireless communication capabilities in the various Raspberry Pi SMB models. Multiple approaches have emerged for the various boards, and can be found outlined here:
 
 https://github.com/DesobedienteTecnologico/rpi_disable_wifi_and_bt_by_hardware
 
@@ -279,7 +294,9 @@ https://www.waveshare.com/1.3inch-lcd-hat.htm
 
 This display + controls module can commonly be acquired for $15 or less, though it will likely have to be ordered via the internet. One of the biggest advantages of this hardware module is that Waveshare has made a python-friendly driver publicly available; this driver made it easy to hit the ground running with the hardware and begin experimenting. I initially started working with a slightly different 120x120 pixel display + controls module, but it quickly became apparent that given the small screen size, the additional pixels would come in handy.
 
-(insert image of Waveshare LCD hat)
+<p align="center">
+<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/waveshare_hat.PNG" width="450">
+</p>
 
 Builders purchasing their own components should be ensure the display + controls module they order has the 240x240 pixel designation, as Waveshare offers several display + control modules with similar hardware profiles, but that will not be compatible with the released SeedSigner software.
 
@@ -287,47 +304,39 @@ Builders purchasing their own components should be ensure the display + controls
 
 Though most any Raspberry-Pi Zero compatible camera should be compatible with the SeedSigner software, most users opt for a very inexpensive, stock, Zero-compatible camera with an OV5647 sensor (capable of 5MP/1080p).
 
-(insert image of Raspberry Pi-compatible camera)
+<p align="center">
+<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/picam.PNG" width="450">
+</p>
 
 This camera can commonly be acquired for $10 or less and is quite capable given its low price-point. One thing to watch for when ordering this camera is to make sure you acquire a Zero-compatible ribbon cable if you intend to use it with a Pi Zero (these cables are typically gold in color, and narrower than a standard Raspberry Pi camera cable).
 
 It should be noted that the above camera is also manufactured in a more compact build profile that is specifically designed for the Pi Zero and has some of the electrical components built into the ribbon cable itself:
 
-(insert image of Zero-compatible camera)
+<p align="center">
+<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/zerocam.PNG" width="450">
+</p>
 
 It is helpful to know what kind of enclosure you plan to use, before selecting which camera to purchase (more on build enclosures to come).
 
 ### Notes on “Micro” components:
 
-I typically do not include these items in the SeedSigner “bill of materials” because most people tend to have several of them laying around their homes, but to operate a SeedSigner you will also need a MicroSD-profile memory card and a MicroUSB cable. The MicroSD memory card will need to have a minimum data capacity of 4GB, but beyond that no specific class or brand is required. There is also nothing special about the MicroUSB cable needed. For power, a common mobile phone power adapter will provide ample power, as will a laptop computer’s USB ports. USB-compatible mobile power banks can also be a convenient way to power SeedSigner with more mobility than a wall outlet will allow for. Please note that while it is sometimes possible to use SeedSigner with a 9V-to-USB power adapter, this setup commonly does not provide ample power for the SeedSigner’s camera and various malfunctions will result.
+I typically do not include these items in the SeedSigner “bill of materials” because most people tend to have several of them laying around their homes, but to operate a SeedSigner you will also need a MicroSD-profile memory card and a MicroUSB cable. The MicroSD memory card will need to have a minimum data capacity of 1GB, but beyond that no specific class or brand is required and any card with a larger storage capacity will work fine. There is also nothing special about the MicroUSB cable needed. For power, a common mobile phone power adapter will provide ample power, as will a laptop computer’s USB ports. USB-compatible mobile power banks can also be a convenient way to power SeedSigner with more mobility than a wall outlet will allow for. Please note that while it is sometimes possible to use SeedSigner with a 9V-to-USB power adapter, this setup commonly does not provide ample power for the SeedSigner’s camera and various malfunctions will result.
 
 ### Keeping it all together:
 
 Once you have all of the necessary components together for a build, there are multiple enclosure solutions to enhance SeedSigner’s durability and visual appeal.
 
-**”Open Pill” one-piece enclosure:** This was actually the second enclosure for SeedSigner that I designed, and it is optimized for simplicity and quick, inexpensive deployment. The enclosure design files can be found in the SeedSigner software repository (https://github.com/SeedSigner/seedsigner/tree/main/enclosures/open_pill) and can be reliably reproduced with just about any common FDM (or SLA) 3D printer.
+Several 3d-printable enclosure designs are available within the SeedSigner repo at:
 
-The design consists of a single component that does not require any additional screws, nuts, buttons or any other additional components to assemble; after installing the camera module, the Pi Zero is snapped into place, and the display+controls hat is then seated atop the Zero (an overview of the assembly can be found at: https://youtu.be/gXPFJygZobE). 
+https://github.com/SeedSigner/seedsigner/tree/dev/enclosures
 
-<p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/open_pill.JPG" width="450">
-</p>
-
-**”Orange Pill” enclosure:** This was my first enclosure design, intended to grab people’s attention and get them excited to build a SeedSigner. I felt like I never got the thumb-stick design quite right; for some it works great, for others the joystick action has been unreliable. The enclosure would also have to be partially disassembled to install updates, as access to the MicroSD memory card is necessary to do so. The Open Pill was a response to these issues, so that our users could focus on the amazing software we’ve built. But some SeedSigner users continue to be die-hard fans of the Orange Pill. The enclosure design files can be found in the SeedSigner software repository (https://github.com/SeedSigner/seedsigner/tree/main/enclosures/orange_pill).
-
-The upper and lower portions of the main enclosure can be produced using a standard FDM printer, and while some have been able to reproduce the buttons and thumb-stick topper using an FDM printer, using an SLA printer will result in cleaner, more precisely rendered components. The enclosure also requires the following manufactured components:
-
-- 4 x M2.5 Female-to-female spacers, 10 mm in length
-- 4 x M2.5 flat screws, 12mm in length
-- 4 x M2.5 flat screws, 6mm in length
-
-Once the camera is installed, the Pi Zero board is secured underneath four spacers with 4 x 12mm screws that are installed from the underside of the enclosure. The display+controls hat is then seated atop the Zero and secured in place with 4 x 6mm screws. The easiest way to install the lid is to invert it, and place the button covers and thumb-stick topper in position. The lower half with the remaining pieces can then be inverted as well, and the two assemblies can be mated together (an overview of the assembly can be found at: https://youtu.be/aIIc2DiZYcI).
+Note that each enclosure type is accompanied by an information page that details the enclosure's characteristics and which specific hardware components it is designed to accommodate.
 
 <p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/orange_pill.JPG" width="450">
+<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/enclosure_photo.png" width="450">
 </p>
 
-**Alternative “Barebones” builds:** You can also use commercially manufactured acrylic protectors to keep your SeedSigner together and protected. These builds typically use the aforementioned alternative & more compact Pi Zero camera, and use a collection of screws and nuts to hold everything in place. Here is an example of this kind of build from Keith, one of our lead developers:
+**Alternative “Barebones” builds:** You can also use commercially manufactured acrylic protectors to keep your SeedSigner together and protected. These builds typically use the aforementioned alternative & more compact Pi Zero camera, and use a collection of screws and nuts to hold everything in place. Here is an example of this kind of build from Keith Mukai, our lead developer:
 
 <p align="left">
 <img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/compact_build.png" width="450">
@@ -349,9 +358,8 @@ Sparrow should pre-populate the necessary settings to connect to a default publi
 
 * https://1209k.com/bitcoin-eye/ele.php?chain=tbtc
 
-You’ll also need testnet coins to begin experimenting with the network; here are a couple of sources where free testnet coins can be quickly and easily acquired for free:
+You’ll also need testnet coins to begin experimenting with the network; here is the best source I've found where testnet coins can be quickly and easily acquired for free:
 
-* https://testnet-faucet.mempool.co
 * https://bitcoinfaucet.uo1.net
 
 I emphatically suggest that as a critical part of creating and implementing your new multi-signature wallet, that you test and practice with Testnet. We can’t be skillful or truly confident about anything until we’ve practiced it, and an important part of implementing your own custody solution and holding bitcoin over the long-term is being confident in your storage scheme.
@@ -374,17 +382,17 @@ With SeedSigner, from the main menu navigate to:
 <img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/seedsigner_create_seed_from_image.png" width="750">
 </p>
 
-After choosing the length of your mmemonic, you will then be presented with a screen detailling your 12 or 24 word seed that represent the private key you just created. Write these words down and double-check the accuracy of what you copied using the "Verify Backup" option. Next, you will have the opportunity to access SeedSigner's manual transcription interface in order to export your private key in the form of a SeedQR. This interface allows you to convert your seed phrase to a single-frame QR code that can be used to quickly and easily import your private key into SeedSigner in the future. This “SeedQR” is then viewable in a zoomed-in interface to make the transcription process simpler.
+After choosing the length of your mmemonic, you will then be presented with a screen detailling your 12 or 24 word seed that represent the private key you just created. Write these words down and double-check the accuracy of what you copied using the "Verify Backup" option. After verifying you've correctly written the words down, you have the option to apply an additional (BIP-39) passphrase to the seed phrase before finalizing it for use on the device. Use a passphrase won't be covered in this guide, but just be aware that if you choose to add a passphrase to a given seed, the passphrase transforms the private key represented by your seed into a completely new private key that can't be accessed without both the seed phrase **AND** the correct passprase. 
 
-From your loaded seed menu, navigate to:
+After selected "Done" to finalize the seed, next, you will have the opportunity to access SeedSigner's manual transcription interface in order to export your private key in the form of a SeedQR. This process is optional but recommended, because the process  allows you to record your seed phrase as a single-frame QR code that can be used to quickly and easily import your private key into SeedSigner in the future. To begin the transcription process, from your loaded seed menu navigate to:
 
- Backup Seed –> Export as SeedQR –> select desired format
+Backup Seed –> Export as SeedQR –> select desired format
 
 <p align="left">
 <img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/seedsigner_navigate_to_seedqr.png" width="600">
 </p>
 
-The process to manually create a SeedQR typically takes about 10 minutes, but will save you much more, that is you won’t need to enter your seed word-by-word into SeedSigner for subsequent uses. It is worth noting at this point that your QR-encoded seed phrase should **never** be scanned into any device that connects to the internet; SeedSigner should likely be the only device that you ever use to scan your SeedQR, unless perhaps at some point in the future you might use it to enter your seed into another QR-enabled signing device or hardware wallet. Your SeedQR should **never** be scanned into your computer’s webcam, or scanned with your mobile phone’s camera as it represents secret information that could be used to access your funds. It should also be noted that for users leery of encoding your private key into QR-form, your seed words can be manually entered into SeedSigner at any point to set up a new wallet or authorize bitcoin transactions.
+The process to manually create a SeedQR typically takes about 10 minutes. It is worth noting at this point that your QR-encoded seed phrase should **never** be scanned into any device that connects to the internet; SeedSigner should likely be the only device that you ever use to scan your SeedQR, unless perhaps at some point in the future you might use it to enter your seed into another QR-enabled signing device or hardware wallet. Your SeedQR should **never** be scanned into your computer’s webcam, or scanned with your mobile phone’s camera as it represents secret information that could be used to access your funds. It should also be noted that for users leery of encoding your private key into QR-form, your seed words can be manually entered into SeedSigner at any point to set up a new wallet or authorize bitcoin transactions.
 
 Examples of the SeedQR transcription interface:
 
@@ -392,7 +400,7 @@ Examples of the SeedQR transcription interface:
 <img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/seedsigner_transcription_ui.png" width="750">
 </p>
 
-We offer a few user-printable formats for documenting seed phrases and SeedQRs in our repo’s “docs” folder (https://github.com/SeedSigner/seedsigner/tree/main/docs)
+Several user-printable options for documenting seed phrases and SeedQRs can be found in the official repo's “docs” folder (https://github.com/SeedSigner/seedsigner/tree/main/docs)
 
 Here is an example of a seed phrase and transcribed SeedQR using one of the forms available in the repo:
 
@@ -400,21 +408,17 @@ Here is an example of a seed phrase and transcribed SeedQR using one of the form
 <img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/seed_qr_card_example.png" width="600">
 </p>
 
-After you finish the QR transcription process, you will have the option to verify that the SeedQR has been properly transcribed. Now scan your handmade SeedQR, and confirm that it scans properly and that the resulting words match what you have written down. Once done, you will be redirected to your loaded seed menu.
-
-<p align="left">
-<img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/seedsigner_reimport.png" width="750">
-</p>
+After you exit the QR transcription interface, you will have the option to verify that the SeedQR has been properly transcribed by selecting "Confirm SeedQR". Selecting this option will activate the camera, and you can scan the freshly-created SeedQR to confirm it has been transcribed correctly.
 
 For the 2-of-3 wallet we’ll be setting up for testing, you will need to repeat this process two more times to create a total of three private keys. The good news is that as long as you’re comfortable you’ve maintained the secrecy of these keys during your testing, you can use them for your mainnet long-term Bitcoin storage wallet if you like.
 
-Now that you have the necessary three keys created and documented, it’s time to create your testnet wallet in Sparrow. First, switch Sparrow from mainnet to testnet; within the Sparrow menu, navigate to Tools —> Restart in Testnet
+Once that you have the necessary three keys created and documented, it’s time to create your testnet wallet in Sparrow. First, if you didn't start Sparrow in testnet using the terminal commands above, you can also switch from mainnet to testnet by navigating to Tools —> Restart in Testnet:
 
 <p align="left">
 <img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/sparrow_switch_testnet.png" width="350">
 </p>
 
-Then, from the same Sparrow menu, navigate to File —> New Wallet
+With Sparrow operating in testnet mode, to create the wallet navigate to File —> New Wallet
 
 <p align="left">
 <img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/sparrow_new_wallet.png" width="350">
@@ -607,7 +611,7 @@ Congratulations! You should now be able to click the "Broadcast Transaction" but
 
 In the above steps, I've illustrated the basic processes of creating private keys, creating a multi-signature wallet using extended public keys, and signing transactions using your SeedSigner. As you contemplate setting up a multi-signature wallet for long term bitcoin storage, there are a number of variables that deserve careful consideration. To conclude this guide, I am going to touch on several of these variables and offer some perspective on each of them.
 
-**Electrum or Full Node?:** When you use your wallet coordinator to connect to a server managed by a third-party, you are implicitly trusting that source to provide up-to-date, accurate, honest information about the state of the bitcoin network. Interacting with a third-party server can also constitute a significant privacy leak given the nature of your coordinator's communication with it. Using your own full node is much more private and trust-less, but you'll either have to be willing to set up a dedicated computer to serve as your node, or utilize several hundred gigabytes of space on your local hard drive to run a full node there (note: it is possible to run a "pruned" node that does not contain a full historical copy of the entire bitcoin blockchain; there are some trade-offs with this approach but it may be a good compromise for a lot of users).
+**Electrum or Full Node?:** When you use your wallet coordinator to connect to a server managed by a third-party, you are implicitly trusting that source to provide up-to-date, accurate, honest information about the state of the bitcoin network. Interacting with a third-party server can also constitute a significant privacy leak given the nature of your coordinator's communication with it. Using your own full node is much more private and trust-less, but you'll either have to be willing to set up a dedicated computer to serve as your node, or utilize several hundred gigabytes of space on your local hard drive to run a full node there (note: it is possible to run a "pruned" node that does not contain a full historical copy of the entire bitcoin blockchain; there are some trade-offs with this approach but it may be a good compromise for some users).
 
 **How Many Members Does Your Board Have?:** Even though this guide illustrates a simple 2-of-3 multi-signature quorum (with 3-of-5 being another popular choice), the possibilities here are literally endless. For example, our development fund is a 4-of-6 quorum where four individual stake-holders in the project hold a single key, and I as the founder of the project hold the remaining two, giving me a little more influence over potential spends. But as long as the other four members don't lose their keys, I could disappear and the funds would still be accessible.
 
@@ -617,7 +621,7 @@ In the above steps, I've illustrated the basic processes of creating private key
 
 **Duress/Decoy Funds?:** The idea here is to take a seed (probably the one you will be storing in your home), create a single-signature wallet from that seed, and deposit some amount of bitcoin to the wallet. The idea behind this technique is that if someone attempts to coerce you (usually in-person, with physical violence) to give them your bitcoin, you can produce this wallet as "all you have" in an attempt to convince the attacker to leave. As this is a commonly-known technique, you'll have to decide whether it makes sense for your setup. The amount associated with the seed in your home is intended to be enough to either convince the attacker it is all of the bitcoin you own, or at least enough to convince them it is worth their while to "take the money and run". 
 
-**Do You Like Heavy Metal?:** Over the long-term pen and marker can fade depending on the type and quality of writing device you are using, as well as the type and quality of the paper/cardboard you have selected, however regardless of how well you choose writing materials they are all succeptible to damge by fire. Metal QR solutions are likely to increase in quality and availability over time, but even a low-cost metal-washer backup (add seedmint link) is adequate to safeguard your seed words. If you end up selecting a 3-of-5 quorum, how likely is it that three of your seeds might be destroyed by fire, rendering your bitcoin holdings inaccessible? Only you can decide whether recording your seeds with metal is worth the additional time, trouble and expense.
+**Do You Like Heavy Metal?:** Over the long-term pen and marker can fade depending on the type and quality of writing device you are using, as well as the type and quality of the paper/cardboard you have selected, however regardless of how well you choose writing materials they are all succeptible to damge by fire. Metal QR solutions are likely to increase in quality and availability over time, but even a low-cost metal-washer backup is adequate to safeguard your seed words. If you end up selecting a 3-of-5 quorum, how likely is it that three of your seeds might be destroyed by fire, rendering your bitcoin holdings inaccessible? Only you can decide whether recording your seeds with metal is worth the additional time, trouble and expense.
 
 **How many copies of each key?:** People will have differing opinions on this question, but I'm a big believer in having only one copy of each key in a quorum (almost definitely on some kind of metal back-up). As previously noted, with two copies you may halve your chances of loss, but if you are storing them in two different locations, you may be doubling your chances of disclosure. Also, given that one of the strengths of multi-signature wallets is the ability to lose a key without losing funds, for me it only makes sense to have one copy of each. 
 
