@@ -304,7 +304,7 @@ Builders purchasing their own components should be ensure the display + controls
 
 Though most any Raspberry-Pi Zero compatible camera should be compatible with the SeedSigner software, most users opt for a very inexpensive, stock, Zero-compatible camera with an OV5647 sensor (capable of 5MP/1080p).
 
-<p align="center">
+<p align="left">
 <img src="https://github.com/SeedSigner/independent_custody_guide/blob/main/images/picam.PNG" width="450">
 </p>
 
